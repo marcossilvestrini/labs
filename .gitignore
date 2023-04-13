@@ -1,0 +1,27 @@
+#ignore files general
+**/*.log
+**/*.vagrant
+*workspace.code-workspace
+**/*.vdi
+
+#security
+**/authorized_keys
+**/*.pub
+**/*.ppk
+**/*private*
+!Klpic2.com.br.+013+29838.private
+
+#Linux kernel
+**/Kernel
+
+#Apps
+*.exe
+
+#Bind
+vagrant/bind/test/*
+!vagrant/bind/test/.gitkeep
+!vagrant/bind/test/check-bind-stack.txt
+
+#Slack
+Slack/silvestrini.py
+*__pycache__*

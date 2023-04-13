@@ -1,0 +1,22 @@
+{
+    "cSpell.words": [
+        "apachectl",
+        "htpasswd",
+        "loadbalance",
+        "LPIC",
+        "nameserver",
+        "noout",
+        "passout",
+        "pstree",
+        "roadmap",
+        "silvestrini",
+        "SSLCA"
+    ],
+    "remote.SSH.remoteServerListenOnSocket": false,
+    "remote.SSH.defaultForwardedPorts": [
+
+    ],
+    "github-actions.workflows.pinned.workflows": [
+        ".github/workflows/check-bind-stack.yml"
+    ]
+}
