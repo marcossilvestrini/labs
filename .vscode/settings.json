@@ -10,6 +10,7 @@
         "pstree",
         "roadmap",
         "silvestrini",
+        "skynet",
         "SSLCA"
     ],
     "remote.SSH.remoteServerListenOnSocket": false,
