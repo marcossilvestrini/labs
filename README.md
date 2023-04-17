@@ -98,11 +98,11 @@ Use this repository for get learning about LPIC2 202-450 exam
 * [x] Update main README.mf
 * [ ] Fix all github errors(PAT,Tokens,actions.etc)
 * [ ] Add linux stack
-  * [ ] Add bind stack
-    * [ ] Up servers
-    * [ ] Install packages
-    * [ ] Configure services
-    * [ ] Create pipeline for test services
+  * [x] Add bind stack
+    * [x] Up servers
+    * [x] Install packages
+    * [x] Configure services
+    * [x] Create pipeline for test services
   * [ ] Add dhcp stack
     * [ ] Up servers
     * [ ] Install packages

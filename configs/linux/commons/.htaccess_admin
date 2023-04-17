@@ -1,0 +1,3 @@
+Require ip 192.168.0.100
+Require ip 192.168.0.150
+Require host skynet.com.br
