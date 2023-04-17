@@ -1,6 +1,7 @@
 <h1><a name="readme-top"></a></h1>
 
 [![Check bind Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml)
+[![Check dhcp Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml)
 [![Check http Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml)
 [![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
 
@@ -105,11 +106,11 @@ Use this repository for get learning about LPIC2 202-450 exam
     * [x] Install packages
     * [x] Configure services
     * [x] Create pipeline for test services
-  * [ ] Add dhcp stack
-    * [ ] Up servers
-    * [ ] Install packages
-    * [ ] Configure services
-    * [ ] Create pipeline for test services
+  * [x] Add dhcp stack
+    * [x] Up servers
+    * [x] Install packages
+    * [x] Configure services
+    * [x] Create pipeline for test services
   * [ ] Add openldap stack
     * [ ] Up servers
     * [ ] Install packages
