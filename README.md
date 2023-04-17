@@ -1,6 +1,8 @@
 <h1><a name="readme-top"></a></h1>
 
-[![Check bind Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml) [![Check http Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml) [![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
+[![Check bind Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml)
+[![Check http Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml)
+[![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
 
 [![MIT License][license-shield]][license-url]
 [![Forks][forks-shield]][forks-url]
@@ -96,7 +98,7 @@ Use this repository for get learning about LPIC2 202-450 exam
 
 * [x] Create repository
 * [x] Update main README.mf
-* [ ] Fix all github errors(PAT,Tokens,actions.etc)
+* [x] Fix all github errors(PAT,Tokens,actions.etc)
 * [ ] Add linux stack
   * [x] Add bind stack
     * [x] Up servers
