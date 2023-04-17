@@ -23,7 +23,9 @@ debian-server01        A       172.36.12.240   ;glue record,dns slave
 debian-server02        A       192.168.0.141   ;dns forward
 debian-server02        A       172.36.12.241   ;dns forward
 ol9-client01           A       192.168.0.150   ;client server
-ol9-client01           A       172.36.12.250  ;client server
+ol9-client01           A       172.36.12.250   ;client server
+debian-client01        A       192.168.0.150   ;client server
+debian-client01        A       172.36.12.250   ;client server
 silvestrini            A       192.168.0.100   ;my desktop
 mail                   A       192.168.0.130   ;mail
 mail2                  A       192.168.0.140   ;mail

@@ -83,14 +83,22 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian5_lpic2_202\virtualbox\private_key $vagrantPK\debian5
 
 #Up Servers BIND
-$bind = "$baseVagrantfile\linux\dnsbind"
-Set-Location $bind
-Start-Process -Wait -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# $bind = "$baseVagrantfile\linux\dnsbind"
+# Set-Location $bind
+# Start-Process -Wait -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+# Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
+# Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
+# Copy-Item .\.vagrant\machines\ol9-client01\virtualbox\private_key $vagrantPK\ol9-client01
+
+# Up Servers DHCP
+$dhcp = "$baseVagrantfile\linux\dhcp"
+Set-Location $dhcp
+Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
-Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
-Copy-Item .\.vagrant\machines\ol9-client01\virtualbox\private_key $vagrantPK\ol9-client01
+Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
 
 #Up Servers HTTP
@@ -108,14 +116,6 @@ Copy-Item .\.vagrant\machines\ol9-client01\virtualbox\private_key $vagrantPK\ol9
 # Up Servers FILE SHARING
 # $fs = "$baseVagrantfile\FS"
 # Set-Location $fs
-# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
-# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
-
-# Up Servers DHCP,PAM, LDAP
-# $dhcp_ldap = "$baseVagrantfile\DHCP_LDAP"
-# Set-Location $dhcp_ldap
 # Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 # Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 # Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01

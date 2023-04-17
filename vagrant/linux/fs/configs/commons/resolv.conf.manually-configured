@@ -1,3 +1,0 @@
-search lpic2.com.br         # private domain
-nameserver 192.168.0.140    # private ns1
-nameserver 1.1.1.1          # ns external

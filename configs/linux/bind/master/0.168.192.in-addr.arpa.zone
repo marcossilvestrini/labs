@@ -17,3 +17,4 @@ $TTL 1h
 140                 PTR     debian-server01.skynet.com.br.
 141                 PTR     debian-server02.skynet.com.br.
 150                 PTR     ol9-client01.skynet.com.br.
+150                 PTR     debian-client01.skynet.com.br.
