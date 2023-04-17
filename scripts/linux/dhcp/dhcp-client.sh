@@ -4,7 +4,7 @@
     Requirements: none
     Description: Script for Install and Configure DHCP Client
     Author: Marcos Silvestrini
-    Date: 29/03/2023
+    Date: 17/04/2023
 SCRIPT-FUNCTIONS
 
 export LANG=C

@@ -61,6 +61,11 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 
+# Enabling IP forwarding on Linux
+cp configs/commons/sysctl.conf /etc
+dos2unix /etc/sysctl.conf
+systemctl daemon-reload
+
 # Set ssh
 cp -f configs/commons/01-sshd-custom.conf /etc/ssh/sshd_config.d
 dos2unix /etc/ssh/sshd_config.d/01-sshd-custom.conf

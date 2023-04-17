@@ -50,6 +50,11 @@ chown root:root .bashrc .vimrc
 # Set properties for user root
 cp -f .bashrc .vimrc /root/
 
+# Enabling IP forwarding on Linux
+cp configs/commons/sysctl.conf /etc
+dos2unix /etc/sysctl.conf
+systemctl daemon-reload
+
 # SSH,FIREWALLD AND SELINUX
 rm /etc/ssh/sshd_config.d/90-vagrant.conf
 cp -f configs/commons/01-sshd-custom.conf /etc/ssh/sshd_config.d
