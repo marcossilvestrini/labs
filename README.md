@@ -2,6 +2,7 @@
 
 [![Check bind Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml)
 [![Check dhcp Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml)
+[![Check Openldap Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml)
 [![Check http Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-http-stack.yml)
 [![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
 
