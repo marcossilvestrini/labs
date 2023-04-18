@@ -92,9 +92,17 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
 # Copy-Item .\.vagrant\machines\ol9-client01\virtualbox\private_key $vagrantPK\ol9-client01
 
-# Up Servers DHCP
-$dhcp = "$baseVagrantfile\linux\dhcp"
-Set-Location $dhcp
+# # Up Servers DHCP
+# $dhcp = "$baseVagrantfile\linux\dhcp"
+# Set-Location $dhcp
+# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+# Up Servers OpenLDAP
+$openldap = "$baseVagrantfile\linux\openldap"
+Set-Location $openldap
 Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01

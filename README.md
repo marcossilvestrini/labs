@@ -112,11 +112,11 @@ Use this repository for get learning about LPIC2 202-450 exam
     * [x] Install packages
     * [x] Configure services
     * [x] Create pipeline for test services
-  * [ ] Add openldap stack
-    * [ ] Up servers
-    * [ ] Install packages
-    * [ ] Configure services
-    * [ ] Create pipeline for test services
+  * [x] Add openldap stack
+    * [x] Up servers
+    * [x] Install packages
+    * [x] Configure services
+    * [x] Create pipeline for test services
   * [ ] Add postfix stack
     * [ ] Up servers
     * [ ] Install packages

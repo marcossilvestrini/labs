@@ -1,0 +1,101 @@
+# skynet.com.br
+dn: dc=skynet,dc=com,dc=br
+objectClass: dcObject
+objectClass: organization
+dc: skynet
+o: Skynet Domain Component
+
+# admin, skynet.com.br
+dn: cn=admin,dc=skynet,dc=com,dc=br
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP Administrator
+userPassword: {SSHA}aYvQdBZcIMkGHSeZJI+Zu+g8zmq6o2fw
+
+# support, skynet.com.br
+dn: ou=support,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: support
+
+# development, skynet.com.br
+dn: ou=development,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: development
+
+# test, skynet.com.br
+dn: ou=test,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: test
+
+# managers, support, skynet.com.br
+dn: ou=managers,ou=support,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: managers
+
+# employees, support, skynet.com.br
+dn: ou=employees,ou=support,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: employees
+
+# managers, development, skynet.com.br
+dn: ou=managers,ou=development,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: managers
+
+# employees, development, skynet.com.br
+dn: ou=employees,ou=development,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: employees
+
+# managers, test, skynet.com.br
+dn: ou=managers,ou=test,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: managers
+
+# employees, test, skynet.com.br
+dn: ou=employees,ou=test,dc=skynet,dc=com,dc=br
+objectClass: organizationalUnit
+ou: employees
+
+# Marcos, managers, support, skynet.com.br
+dn: cn=Marcos,ou=managers,ou=support,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Marcos
+sn: Silvestrini
+mail: marcos.silvestrini@skynet.com.br
+
+# Carlos, managers, development, skynet.com.br
+dn: cn=Carlos,ou=managers,ou=development,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Carlos
+sn: Sanches
+mail: carlos.sanches@skynet.com.br
+
+# Daiana, managers, test, skynet.com.br
+dn: cn=Daiana,ou=managers,ou=test,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Daiana
+sn: Silva
+mail: daiana@skynet.com.br
+
+# Paulo, employees, support, skynet.com.br
+dn: cn=Paulo,ou=employees,ou=support,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Paulo
+sn: Santos
+mail: paulosantos@skynet.com.br
+
+# Beatriz, employees, development, skynet.com.br
+dn: cn=Beatriz,ou=employees,ou=development,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Beatriz
+sn: Motta
+mail: beatrizmotta@skynet.com.br
+
+# Carlos1, employees, test, skynet.com.br
+dn: cn=Carlos1,ou=employees,ou=test,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Carlos
+sn: Almeida
+mail: carlosalmeida@skynet.com.br
