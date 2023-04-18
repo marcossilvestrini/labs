@@ -1,0 +1,47 @@
+------------------------------------------------------
+Check OpenLDAP Stack for This Lab
+Date: 2023-04-17 23:01:42
+------------------------------------------------------
+
+Check version of openldap server...
+Warning: Permanently added '192.168.0.140' (ECDSA) to the list of known hosts.
+@(#) $OpenLDAP: slapd 2.4.57+dfsg-3+deb11u1 (May 14 2022 18:32:57) $
+	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+
+------------------------------------------------------
+Check status of service isc openldap server...
+
+● slapd.service - LSB: OpenLDAP standalone server (Lightweight Directory Access Protocol)
+     Loaded: loaded (/etc/init.d/slapd; generated)
+    Drop-In: /usr/lib/systemd/system/slapd.service.d
+             └─slapd-remain-after-exit.conf
+     Active: active (running) since Mon 2023-04-17 22:58:02 -03; 3min 41s ago
+--
+     CGroup: /system.slice/slapd.service
+             └─24203 /usr/sbin/slapd -h ldap:/// ldapi:/// -g openldap -u openldap -F /etc/ldap/slapd.d
+
+------------------------------------------------------
+Find Informations in OpenLDAP Custom Database [ dc=skynet,dc=com,dc=br cn=Marcos]...
+
+# extended LDIF
+#
+# LDAPv3
+# base <dc=skynet,dc=com,dc=br> with scope subtree
+# filter: cn=Marcos
+# requesting: ALL
+#
+
+# Marcos, managers, support, skynet.com.br
+dn: cn=Marcos,ou=managers,ou=support,dc=skynet,dc=com,dc=br
+objectClass: inetOrgPerson
+cn: Marcos
+sn: Silvestrini
+mail: marcos.silvestrini@skynet.com.br
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+------------------------------------------------------
