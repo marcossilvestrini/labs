@@ -30,19 +30,15 @@ win-silvestrini             A       192.168.0.100   ;my desktop
 mail                        A       192.168.0.130   ;mail
 mail2                       A       192.168.0.140   ;mail
 ftp                         CNAME   ol9-server01    ;ftp
-www                         CNAME   ol9-server02    ;server
-silvestrini                 CNAME   www             ;http - apache ha - skynet main page
-music                       CNAME   www             ;http - apache ha - music main page
-store                       CNAME   www             ;http - apache ha - store main page
-finance                     CNAME   www             ;http - apache ha - finance main page
-debian-server01.silvestrini CNAME   debian-server01 ;http - apache node 1 - finance main page
-debian-server01.music       CNAME   debian-server01 ;http - apache node 1 - music main page
-debian-server01.store       CNAME   debian-server01 ;http - apache node 1 - store main page
-debian-server01.finance     CNAME   debian-server01 ;http - apache node 1 - finance main page
-debian-server02.silvestrini CNAME   debian-server02 ;http - apache node 2 - finance main page
-debian-server02.music       CNAME   debian-server02 ;http - apache node 2 - music main page
-debian-server02.store       CNAME   debian-server02 ;http - apache node 2 - store main page
-debian-server02.finance     CNAME   debian-server02 ;http - apache node 2 - finance main page
+www                         CNAME   ol9-server02    ;http - apache ha - skynet main page
+silvestrini                 A       192.168.0.131   ;http - apache ha - silvestrini main page
+music                       A       192.168.0.131   ;http - apache ha - music main page
+store                       A       192.168.0.131   ;http - apache ha - store main page
+finance                     A       192.168.0.131   ;http - apache ha - finance main page
+node1-silvestrini           A       192.168.0.140   ;http - apache node 1 - silvestrini main page
+node1-music                 A       192.168.0.140   ;http - apache node 1 - music main page
+node1-store                 A       192.168.0.140   ;http - apache node 1 - store main page
+node1-finance               A       192.168.0.140   ;http - apache node 1 - finance main page
 @                      IN   TXT     "skynet - The Company for crazy people!!!"
 
 skynet.com.br. IN DNSKEY 256 3 13 qzYHNPMPd6QjO66oHI4RL95LBSb3wRuEGJSXgByHJalof0DBJOucDKE1 MMudvv7eNoOabO+m91rQKUbRw6n/Vg==
