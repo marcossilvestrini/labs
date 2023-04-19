@@ -30,7 +30,7 @@ jobs:
         id: check_apache_stack
         run: |
           export SCRIPT_PATH=$(pwd)
-          cat test/linux/http/check-apache-stack.txt
+          cat test/linux/apache/check-apache-stack.txt
   slack_upload_job:
       runs-on: ubuntu-latest
       name: Upload Test Apache Stack
