@@ -42,7 +42,8 @@ setx VAGRANT_HOME $vagrantHome >$null
 
 #Vagrant Boxes
 $bind = "$baseVagrantfile\linux\dnsbind"
-$http = "$baseVagrantfile\linux\http"
+$apache = "$baseVagrantfile\linux\apache"
+$nginx = "$baseVagrantfile\linux\nginx"
 $fs = "$baseVagrantfile\linux\fs"
 $dhcp = "$baseVagrantfile\linux\dhcp"
 $openldap = "$baseVagrantfile\linux\openldap"
@@ -62,8 +63,12 @@ $vmFolders = @(
 Set-Location $bind
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
-#Destroy http stack
-Set-Location $http
+#Destroy apache stack
+Set-Location $apache
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy nginx stack
+Set-Location $nginx
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
 #Destroy fs stack
