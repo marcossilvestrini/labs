@@ -4,7 +4,7 @@
     Requirments: none
     Description: Script for generate certificates for apache
     Author: Marcos Silvestrini
-    Date: 20/03/2023
+    Date: 18/04/2023
 MULTILINE-COMMENT
 
 export LANG=C
@@ -13,25 +13,25 @@ cd /home/vagrant || exit
 
 # Variables
 CA_EXTFILE="/etc/ssl/ca_cert.cnf"
-CA_CRT="/etc/ssl/certs/lpic2.com.br-ca-cert.pem"
-CA_KEY="/etc/ssl/certs/lpic2.com.br-ca-key.pem"
+CA_CRT="/etc/ssl/certs/skynet.com.br-ca-cert.pem"
+CA_KEY="/etc/ssl/certs/skynet.com.br-ca-key.pem"
 SERVER_EXT="/etc/ssl/server_ext.cnf"
 SERVER_CONF="/etc/ssl/server_cert.cnf"
-SERVER_KEY="/etc/ssl/certs/lpic2.com.br-server-key.pem"
-SERVER_CSR="/etc/ssl/certs/lpic2.com.br-server-req.pem"
-SERVER_CRT="/etc/ssl/certs/lpic2.com.br-server-cert.pem"
+SERVER_KEY="/etc/ssl/certs/skynet.com.br-server-key.pem"
+SERVER_CSR="/etc/ssl/certs/skynet.com.br-server-req.pem"
+SERVER_CRT="/etc/ssl/certs/skynet.com.br-server-cert.pem"
 CLIENT_EXT="/etc/ssl/client_ext.cnf"
 CLIENT_CONF="/etc/ssl/client_cert.cnf"
-CLIENT_KEY="/etc/ssl/certs/lpic2.com.br-client-key.pem"
-CLIENT_CSR="/etc/ssl/certs/lpic2.com.br-client-req.pem"
-CLIENT_CRT="/etc/ssl/certs/lpic2.com.br-client-cert.pem"
-CLIENT_P12="/etc/ssl/certs/lpic2.com.br-client-cert.p12"
+CLIENT_KEY="/etc/ssl/certs/skynet.com.br-client-key.pem"
+CLIENT_CSR="/etc/ssl/certs/skynet.com.br-client-req.pem"
+CLIENT_CRT="/etc/ssl/certs/skynet.com.br-client-cert.pem"
+CLIENT_P12="/etc/ssl/certs/skynet.com.br-client-cert.p12"
 
 # Creating the Certificate Authority's Certificate and Keys
 
 ## Generate a private key for the CA:
 rm /etc/ssl/certs/*.pem
-cp -f configs/apache-ha/ca_cert.cnf $CA_EXTFILE
+cp -f configs/apache/certs/ca_cert.cnf $CA_EXTFILE
 dos2unix $CA_EXTFILE
 openssl genrsa -out $CA_KEY 4096 2>/dev/null
 [[ $? -ne 0 ]] && echo "ERROR: Failed to generate $CA_KEY"
@@ -55,8 +55,8 @@ openssl  x509 -noout -text -in $CA_CRT >/dev/null 2>&1
 # Creating the Server's Certificate and Keys
 
 ## Generate the private key and certificate request:
-cp -f configs/apache-ha/server_cert.cnf $SERVER_CONF
-cp -f configs/apache-ha/server_ext.cnf $SERVER_EXT
+cp -f configs/apache/certs/server_cert.cnf $SERVER_CONF
+cp -f configs/apache/certs/server_ext.cnf $SERVER_EXT
 dos2unix $SERVER_CONF
 dos2unix $SERVER_EXT
 openssl \
@@ -89,8 +89,8 @@ openssl verify -CAfile $CA_CRT $SERVER_CRT >/dev/null 2>&1
 # Creating the Client's Certificate and Keys
 
 ## Generate the private key and certificate request:
-cp -f configs/apache-ha/client_cert.cnf $CLIENT_CONF
-cp -f configs/apache-ha/server_ext.cnf $CLIENT_EXT
+cp -f configs/apache/certs/client_cert.cnf $CLIENT_CONF
+cp -f configs/apache/certs/server_ext.cnf $CLIENT_EXT
 dos2unix $CLIENT_CONF
 dos2unix $CLIENT_EXT
 openssl \
@@ -128,21 +128,24 @@ openssl pkcs12 \
 -out $CLIENT_P12 \
 -passout pass:vagrant 
 
+# Set permissions for certificate files
+chmod 644  /etc/ssl/certs/skynet*
+
 # Verifying the Certificates
 
 ## Verify the CA server certificate:
 openssl verify -CAfile $CA_CRT $CA_CRT
-#certtool -i < /etc/ssl/certs/lpic2.com.br-ca-cert.pem
+#certtool -i < /etc/ssl/certs/skynet.com.br-ca-cert.pem
 #openssl x509 -noout -text -in $CA_CRT
 
 ## Verify the server certificate:
 openssl verify -CAfile $CA_CRT $SERVER_CRT
-#certtool -i < /etc/ssl/certs/lpic2.com.br-server-cert.pem
+#certtool -i < /etc/ssl/certs/skynet.com.br-server-cert.pem
 #openssl x509 -noout -text -in $SERVER_CRT
 
 ## Verify the client certificate:
 openssl verify -CAfile $CA_CRT $CLIENT_CRT
-#certtool -i < /etc/ssl/certs/lpic2.com.br-client-cert.pem
+#certtool -i < /etc/ssl/certs/skynet.com.br-client-cert.pem
 #openssl x509 -noout -text -in $CLIENT_CRT
 
 # Reload Daemon(for systemctl units only)
@@ -152,8 +155,8 @@ systemctl daemon-reload
 update-ca-trust
 
 # Copy certificates for share
-cp -p /etc/ssl/certs/lpic2.com.br-ca-cert.pem /etc/ssl/certs/lpic2.com.br-client-cert.p12 configs/commons
+cp -p /etc/ssl/certs/skynet.com.br-ca-cert.pem /etc/ssl/certs/skynet.com.br-client-cert.p12 configs/apache/security
 
 # Restart apache service
-apachectl configtest
-apachectl restart
+#apachectl configtest
+#apachectl restart

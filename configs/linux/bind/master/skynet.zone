@@ -26,11 +26,15 @@ ol9-client01           A       192.168.0.150   ;client server
 ol9-client01           A       172.36.12.250   ;client server
 debian-client01        A       192.168.0.150   ;client server
 debian-client01        A       172.36.12.250   ;client server
-silvestrini            A       192.168.0.100   ;my desktop
+silvestrini-pc         A       192.168.0.100   ;my desktop
 mail                   A       192.168.0.130   ;mail
 mail2                  A       192.168.0.140   ;mail
 ftp                    CNAME   ol9-server01    ;ftp
-www                    CNAME   ol9-server01    ;server
+www                    CNAME   ol9-server02    ;server
+silvestrini            CNAME   www             ;http - apache ha - skynet main page
+music                  CNAME   www             ;http - apache ha - music main page
+store                  CNAME   www             ;http - apache ha - store main page
+finance                CNAME   www             ;http - apache ha - finance main page
 @                      IN      TXT     "skynet - The Company for crazy people!!!"
 
 skynet.com.br. IN DNSKEY 256 3 13 qzYHNPMPd6QjO66oHI4RL95LBSb3wRuEGJSXgByHJalof0DBJOucDKE1 MMudvv7eNoOabO+m91rQKUbRw6n/Vg==

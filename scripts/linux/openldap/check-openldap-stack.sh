@@ -30,7 +30,7 @@ sshpass -p 'vagrant' ssh -o StrictHostKeyChecking=no vagrant@$IP_OPENLDAP -l vag
 echo $LINE >>$FILE_TEST
 
 ## Check status of openldap
-echo -e "Check status of service isc openldap server...\n" >>$FILE_TEST
+echo -e "Check status of service openldap server...\n" >>$FILE_TEST
 sshpass -p 'vagrant' ssh -o StrictHostKeyChecking=no vagrant@$IP_OPENLDAP -l vagrant sudo systemctl status slapd | grep -ws "slapd.service" -A 2 >>$FILE_TEST 2>&1
 echo $LINE >>$FILE_TEST
 

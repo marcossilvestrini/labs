@@ -100,26 +100,24 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
-# Up Servers OpenLDAP
-$openldap = "$baseVagrantfile\linux\openldap"
-Set-Location $openldap
-Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
-Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
-
-
-#Up Servers HTTP
-# $http = "$baseVagrantfile\HTTP"
-# Set-Location $http
+# # Up Servers OpenLDAP
+# $openldap = "$baseVagrantfile\linux\openldap"
+# Set-Location $openldap
 # Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 # Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 # Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-# Copy-Item .\.vagrant\machines\ol9-apache-ha\virtualbox\private_key $vagrantPK\ol9-apache-ha
-# Copy-Item .\.vagrant\machines\ol9-nginx-ha\virtualbox\private_key $vagrantPK\ol9-nginx-ha
-# Copy-Item .\.vagrant\machines\debian-apache-node01\virtualbox\private_key $vagrantPK\debian-apache-node01
-# Copy-Item .\.vagrant\machines\debian-apache-node02\virtualbox\private_key $vagrantPK\debian-apache-node02
-# Copy-Item .\.vagrant\machines\debian-http-client\virtualbox\private_key $vagrantPK\debian-http-client
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+
+# Up Servers Apache
+$apache = "$baseVagrantfile\linux\apache"
+Set-Location $apache
+Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
+Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
+Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
 # Up Servers FILE SHARING
 # $fs = "$baseVagrantfile\FS"

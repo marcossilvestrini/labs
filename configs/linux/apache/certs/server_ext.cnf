@@ -1,0 +1,13 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth, clientAuth
+subjectAltName = @alt_names
+
+[alt_names]
+IP.1 = 192.168.0.131
+IP.2 = 192.168.0.140
+IP.3 = 192.168.0.141
+DNS.1 = ol9-server02.skynet.com.br
+DNS.2 = debian-server01.skynet.com.br
+DNS.3 = debian-server02.skynet.com.br
