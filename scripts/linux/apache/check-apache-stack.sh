@@ -1,6 +1,6 @@
 #!/bin/bash
 <<'SCRIPT-FUNCTION'
-    Description: Script for check HTTP Stack
+    Description: Script for check Apache Stack
     Author: Marcos Silvestrini
     Date: 23/02/2023
 SCRIPT-FUNCTION
