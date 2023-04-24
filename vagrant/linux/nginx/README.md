@@ -1,10 +1,10 @@
 <h1><a name="readme-top"></a></h1>
 
-[![Check http Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-apache-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-apache-stack.yml)
+[![Check http Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-nginx-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-ngix-stack.yml)
 
-# Apache Web Server
+# HTTP
 
-![Apache Web Server](../../../images/web-servers.jpg)
+![HTTP nginx](../../../images/web-servers.jpg)
 
 <p align="center">
 <strong>Explore the docs »</strong></a>
@@ -44,23 +44,23 @@
 
 ## About Project
 
-This project up a stack of Apache Web server for labs.
+This project up a stack of HTTP server for labs.
 
 ## Whats is?
 
-In this project, I up a stack of apache web server.
+In this project, I up a stack of HTTP server with nginx and nginx.
 
 ### Vagrant
 
- I use vagrant for provision all apache servers in this project.
+ I use vagrant for provision all http server in this project.
 
 ### Shell provisioner
 
-I use vagrant shell provisioner for configure apache service and others tools of this stack
+I use vagrant shell provisioner for configure http service and others tools of this stack
 
 ### Git Actions (pipelines)
 
-I use git actions for create a pipeline for my test in apache stack
+I use git actions for create a pipeline for my test in http stack
 
 ### Slack API
 
@@ -102,7 +102,7 @@ git clone https://github.com/marcossilvestrini/labs.git
 ## Usage
 
 ```sh
-cd vagrant/linux/apache
+cd vagrant/linux/nginx
 vagrant up
 ```
 
@@ -112,17 +112,20 @@ vagrant up
 
 ## Roadmap
 
-* [x] Install and Configure Apache
-  * [x] Create script for install and configure apache
-  * [x] Create script for install and configure apache
-  * [x] Create script for install and configure apache
+* [x] Install and Configure Ngix
+  * [x] Create script for install and configure nginx
+  * [x] Create script for install and configure nginx
+  * [x] Create script for install and configure nginx
   * [x] Configure Https for all sites
   * [x] Configure Virtual host for all sites
   * [x] Configure authentication and authorization modules for sites(.htaccess,.htpasswd)
-* [x] Create Script for Generate Certificates
-  * [x] Generate a CA Root certificate
-  * [x] Generate a Self-Signed Server certificate  
-  * [x] Generate a Self-Signed Client certificate
+* [x] Configure Reverse Proxy(loadbalance)
+* [x] Create script for test nginx Stack
+  * [x] Check Service is Running
+  * [x] Check Version
+  * [x] Check Status HTTP
+  * [x] Check Status Module PHP
+  * [x] Check Status Module Perl
 * [x] Create pipeline for print test
 * [x] Create pipeline for send test in slack channel
 
@@ -159,7 +162,7 @@ Project Link: [https://github.com/marcossilvestrini/labs](https://github.com/mar
 ## Acknowledgments
 
 * [http Logging](https://www.zytrax.com/books/dns/ch7/logging.html)
-* [Apache](https://www.apache.org/)
-* [Openssh](https://www.openssh.com/)
+* [nginx](https://www.nginx.org/)
+* [Nginx](https://www.nginx.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

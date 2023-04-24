@@ -104,7 +104,7 @@ git clone https://github.com/marcossilvestrini/labs.git
 ## Usage
 
 ```sh
-cd vagrant/dhcp
+cd vagrant/linux/dhcp
 vagrant up
 ```
 

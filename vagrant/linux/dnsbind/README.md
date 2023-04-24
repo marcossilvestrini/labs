@@ -118,7 +118,7 @@ git clone https://github.com/marcossilvestrini/labs.git
 ## Usage
 
 ```sh
-cd Vagrant/Bind
+cd vagrant/linux/bind
 vagrant up
 ```
 

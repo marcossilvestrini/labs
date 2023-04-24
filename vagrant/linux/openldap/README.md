@@ -104,7 +104,7 @@ git clone https://github.com/marcossilvestrini/labs.git
 ## Usage
 
 ```sh
-cd vagrant/openldap
+cd vagrant/linux/openldap
 vagrant up
 ```
 
@@ -155,18 +155,3 @@ Project Link: [https://github.com/marcossilvestrini/labs](https://github.com/mar
 * [PAM](https://www.ibm.com/docs/en/aix/7.2?topic=system-pluggable-authentication-modules)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/marcossilvestrini/labs.svg?style=for-the-badge
-[contributors-url]: https://github.com/marcossilvestrini/labs/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/marcossilvestrini/labs.svg?style=for-the-badge
-[forks-url]: https://github.com/marcossilvestrini/labs/network/members
-[stars-shield]: https://img.shields.io/github/stars/marcossilvestrini/labs.svg?style=for-the-badge
-[stars-url]: https://github.com/marcossilvestrini/labs/stargazers
-[issues-shield]: https://img.shields.io/github/issues/marcossilvestrini/labs.svg?style=for-the-badge
-[issues-url]: https://github.com/marcossilvestrini/labs/issues
-[license-shield]: https://img.shields.io/github/license/marcossilvestrini/labs.svg?style=for-the-badge
-[license-url]: https://github.com/marcossilvestrini/labs/blob/master/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/marcossilvestrini
