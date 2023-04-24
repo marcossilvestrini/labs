@@ -35,10 +35,14 @@ silvestrini                 A       192.168.0.131   ;http - apache ha - silvestr
 music                       A       192.168.0.131   ;http - apache ha - music main page
 store                       A       192.168.0.131   ;http - apache ha - store main page
 finance                     A       192.168.0.131   ;http - apache ha - finance main page
-node1-silvestrini           A       192.168.0.140   ;http - apache node 1 - silvestrini main page
-node1-music                 A       192.168.0.140   ;http - apache node 1 - music main page
-node1-store                 A       192.168.0.140   ;http - apache node 1 - store main page
-node1-finance               A       192.168.0.140   ;http - apache node 1 - finance main page
+node01-silvestrini          A       192.168.0.140   ;http - apache node 1 - silvestrini main page
+node01-music                A       192.168.0.140   ;http - apache node 1 - music main page
+node01-store                A       192.168.0.140   ;http - apache node 1 - store main page
+node01-finance              A       192.168.0.140   ;http - apache node 1 - finance main page
+node02-silvestrini          A       192.168.0.141   ;http - apache node 2 - silvestrini main page
+node02-music                A       192.168.0.141   ;http - apache node 2 - music main page
+node02-store                A       192.168.0.141   ;http - apache node 2 - store main page
+node02-finance              A       192.168.0.141   ;http - apache node 2 - finance main page
 @                      IN   TXT     "skynet - The Company for crazy people!!!"
 
 skynet.com.br. IN DNSKEY 256 3 13 qzYHNPMPd6QjO66oHI4RL95LBSb3wRuEGJSXgByHJalof0DBJOucDKE1 MMudvv7eNoOabO+m91rQKUbRw6n/Vg==

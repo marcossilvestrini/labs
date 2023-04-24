@@ -12,6 +12,7 @@ export LANG=C
 #Variables
 PRIVATE_IP=$(ip add show | grep 192.168.0 | cut -c 10-22)
 MACHINE_NAME=$(hostname -f)
+NODE=$(hostname | cut -c 14-16)
 
 cd /home/vagrant || exit
 
@@ -41,6 +42,7 @@ a2enmod ssl
 cp configs/apache/apache-node/000-default.conf /etc/apache2/sites-available
 dos2unix /etc/apache2/sites-available/000-default.conf
 chmod 644 /etc/apache2/sites-available/000-default.conf
+sed -i "s/var_hostname/$MACHINE_NAME/g" "/etc/apache2/sites-available/000-default.conf"
 a2enmod rewrite
 #a2ensite 000-default
 
@@ -73,8 +75,8 @@ cp configs/apache/security/.htaccess_admin /var/www/html/admin/.htaccess
 dos2unix /var/www/html/admin/.htaccess
 
 # Create www.skynet.com.br/logs
-cp configs/apache/security/.htaccess /var/log/httpd
-dos2unix /var/log/httpd/.htaccess
+cp configs/apache/security/.htaccess /var/log/apache2
+dos2unix /var/log/apache2/.htaccess
 chmod 755 -R /var/log/apache2
 
 # Create Main Site - www.skynet.com.br and set: Virtualhost, alias and redirects
@@ -90,6 +92,7 @@ touch /var/www/html/silvestrini/docs/doc{1..6}
 cp configs/apache/apache-node/silvestrini.conf /etc/apache2/sites-available
 dos2unix /etc/apache2/sites-available/silvestrini.conf
 chmod 644 /etc/apache2/sites-available/silvestrini.conf
+sed -i "s/VAR_NODE/$NODE/g" "/etc/apache2/sites-available/silvestrini.conf"
 cp configs/apache/html/index-silvestrini.html /var/www/html/silvestrini/index.html
 sed -i "s/var_ip/$PRIVATE_IP/g" "/var/www/html/silvestrini/index.html"
 sed -i "s/var_hostname/$MACHINE_NAME/g" "/var/www/html/silvestrini/index.html"
@@ -100,6 +103,7 @@ mkdir -p /var/www/html/music
 cp configs/apache/apache-node/music.conf /etc/apache2/sites-available
 dos2unix /etc/apache2/sites-available/music.conf
 chmod 644 /etc/apache2/sites-available/music.conf
+sed -i "s/VAR_NODE/$NODE/g" "/etc/apache2/sites-available/music.conf"
 cp configs/apache/html/index-music.html /var/www/html/music/index.html
 sed -i "s/var_ip/$PRIVATE_IP/g" "/var/www/html/music/index.html"
 sed -i "s/var_hostname/$MACHINE_NAME/g" "/var/www/html/music/index.html"
@@ -110,6 +114,7 @@ mkdir -p /var/www/html/store
 cp configs/apache/apache-node/store.conf /etc/apache2/sites-available
 dos2unix /etc/apache2/sites-available/store.conf
 chmod 644 /etc/apache2/sites-available/store.conf
+sed -i "s/VAR_NODE/$NODE/g" "/etc/apache2/sites-available/store.conf"
 cp configs/apache/html/index-store.html /var/www/html/store/index.html
 sed -i "s/var_ip/$PRIVATE_IP/g" "/var/www/html/store/index.html"
 sed -i "s/var_hostname/$MACHINE_NAME/g" "/var/www/html/store/index.html"
@@ -120,6 +125,7 @@ mkdir -p /var/www/html/finance
 cp configs/apache/apache-node/finance.conf /etc/apache2/sites-available
 dos2unix /etc/apache2/sites-available/finance.conf
 chmod 644 /etc/apache2/sites-available/finance.conf
+sed -i "s/VAR_NODE/$NODE/g" "/etc/apache2/sites-available/finance.conf"
 cp configs/apache/html/index-finance.html /var/www/html/finance/index.html
 sed -i "s/var_ip/$PRIVATE_IP/g" "/var/www/html/finance/index.html"
 sed -i "s/var_hostname/$MACHINE_NAME/g" "/var/www/html/finance/index.html"

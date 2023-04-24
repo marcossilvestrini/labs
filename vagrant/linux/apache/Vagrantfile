@@ -194,6 +194,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     debian_server02.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
     # CONFIGURE APACHE NODE 2
+    debian_server02.vm.provision "shell", path: "../../../scripts/linux/apache/userdata-apache-node.sh"    
     
   end
 
