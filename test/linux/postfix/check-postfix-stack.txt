@@ -1,1 +1,35 @@
-Test Postfix Stack
+------------------------------------------------------
+Check postfix Stack for This Lab
+Date: 2023-04-26 10:17:05
+------------------------------------------------------
+
+------------------------------------------------------
+Check Status of Postfix...
+
+     Active: active (running) since Wed 2023-04-26 09:18:24 -03; 58min ago
+------------------------------------------------------
+Check version of postfix...
+
+mail_version = 3.5.9
+------------------------------------------------------
+Check Status of Dovecot...
+
+     Active: active (running) since Wed 2023-04-26 09:18:24 -03; 58min ago
+------------------------------------------------------
+Check version of Dovecot...
+
+2.3.16 (7e2e900c1a)
+------------------------------------------------------
+Send Test Mail Message for Postfix server...
+Send test mail succeeded
+------------------------------------------------------
+Read Test Mail Message for Postfix server...
+
+To: Vagrant <vagrant@skynet.com.br>
+From: Root<root@skynet.com.br>
+Subject: Test Postfix Mail Server
+Message-Id: <20230426131344.6F7E1300B3F5@ol9-server01.skynet.com.br>
+Date: Wed, 26 Apr 2023 10:13:44 -0300 (-03)
+
+This is a test postfix mail server.
+------------------------------------------------------

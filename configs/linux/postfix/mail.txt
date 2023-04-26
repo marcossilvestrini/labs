@@ -1,0 +1,4 @@
+To: Vagrant <vagrant@skynet.com.br>
+From: Root<root@skynet.com.br>
+Subject: Test Postfix Mail Server
+This is a test postfix mail server.
