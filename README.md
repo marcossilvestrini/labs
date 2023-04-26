@@ -4,7 +4,7 @@
 [![Check dhcp Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml)
 [![Check Openldap Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml)
 [![Check Apache Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-apache-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-apache-stack.yml)
-[![Check Nginx Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-ngix-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-ngix-stack.yml)
+[![Check Nginx Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-nginx-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-ngix-stack.yml)
 [![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
 
 [![MIT License][license-shield]][license-url]
@@ -123,11 +123,11 @@ Use this repository for get learning about LPIC2 202-450 exam
     * [x] Install packages
     * [x] Configure services
     * [x] Create pipeline for test services
-  * [ ] Add nginx stack
-    * [ ] Up servers
-    * [ ] Install packages
-    * [ ] Configure services
-    * [ ] Create pipeline for test services
+  * [x] Add nginx stack
+    * [x] Up servers
+    * [x] Install packages
+    * [x] Configure services
+    * [x] Create pipeline for test services
   * [ ] Add postfix stack
     * [ ] Up servers
     * [ ] Install packages

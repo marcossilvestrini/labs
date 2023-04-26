@@ -21,7 +21,7 @@ FILE_TEST=test/apache/check-apache-stack.txt
 LINE="------------------------------------------------------"
 
 echo $LINE >$FILE_TEST
-echo "Check HTTP Stack for This Lab" >>$FILE_TEST
+echo "Check Apache Stack for This Lab" >>$FILE_TEST
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Date: $DATE" >>$FILE_TEST
 echo -e "$LINE\n" >>$FILE_TEST
