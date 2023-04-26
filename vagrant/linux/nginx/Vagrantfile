@@ -41,16 +41,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vbguest.no_remote   = true
   config.vm.box_download_insecure=true
 
-  # VM ol9_server01
+  # VM ol9_server01 - DNS Bind Server
   config.vm.define "ol9-server01"  do |ol9_server01|
     ol9_server01.vm.box = BOX_OL_NAME
     ol9_server01.vm.box_url = "#{BOX_OL_URL}/#{BOX_OL_NAME}.json"
 
     # VARIABLE HOSTNAME
-    VM_MASTER_NAME= "ol9-server01"
+    VM_OL9_SERVER01= "ol9-server01"
 
     # HOSTNAM
-    ol9_server01.vm.hostname =VM_MASTER_NAME
+    ol9_server01.vm.hostname =VM_OL9_SERVER01
 
     # NETWORK
     ol9_server01.vm.network "public_network",nic_type: "virtio",ip: "192.168.0.130",mode: "bridge",bridge: [
@@ -67,7 +67,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # PROVIDER
     ol9_server01.vm.provider "virtualbox" do |vb|
       vb.linked_clone = true
-      vb.name =VM_MASTER_NAME
+      vb.name =VM_OL9_SERVER01
       vb.memory = 1024
       vb.cpus = 1
     end
@@ -80,220 +80,164 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end
 
-  # VM debian_bind_slave
-  config.vm.define "debian-bind-slave"  do |debian_bind_slave|
-    debian_bind_slave.vm.box = BOX_DEBIAN_NAME
+  # VM ol9_server02 -  NGINX Reverse Proxy Service
+  config.vm.define "ol9-server02"  do |ol9_server02|
+    ol9_server02.vm.box = BOX_OL_NAME
+    ol9_server02.vm.box_url = "#{BOX_OL_URL}/#{BOX_OL_NAME}.json"
 
     # VARIABLE HOSTNAME
-    VM_SLAVE_NAME= "debian-bind-slave"
-
-    # HOSTNAME
-    debian_bind_slave.vm.hostname =VM_SLAVE_NAME
-
-    # NETWORK
-    debian_bind_slave.vm.network "public_network",ip: "192.168.0.141",mode: "bridge",bridge: "Intel(R) I211 Gigabit Network Connection"
-    debian_bind_slave.vm.network "private_network",ip: "172.36.12.231"
-
-    # MOUNTS
-    debian_bind_slave.vm.synced_folder ".", "/vagrant", disabled: true
-    debian_bind_slave.vm.synced_folder "../../Security/", "/home/vagrant/security"
-    debian_bind_slave.vm.synced_folder "../../Scripts/lpic2/", "/home/vagrant/scripts"
-    debian_bind_slave.vm.synced_folder "./configs", "/home/vagrant/configs"
-
-    #PROVIDER
-    debian_bind_slave.vm.provider "virtualbox" do |vb|
-      vb.linked_clone = true
-      vb.name =VM_SLAVE_NAME
-      vb.memory = 1024
-      vb.cpus = 1
-    end
-
-    # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    debian_bind_slave.vm.provision "shell", path: "scripts/user-data-bind-slave.sh"
-  end
-
-  # VM ol9_apache_ha
-  config.vm.define "ol9-apache-ha"  do |ol9_apache_ha|
-    ol9_apache_ha.vm.box = BOX_OL_NAME
-    ol9_apache_ha.vm.box_url = "#{BOX_OL_URL}/#{BOX_OL_NAME}.json"
-
-    # VARIABLE HOSTNAME
-    VM_HA_NAME= "ol9-apache-ha"
+    VM_OL9_SERVER02= "ol9-server02"
 
     # HOSTNAM
-    ol9_apache_ha.vm.hostname =VM_HA_NAME
+    ol9_server02.vm.hostname =VM_OL9_SERVER02
 
     # NETWORK
-    ol9_apache_ha.vm.network "public_network",ip: "192.168.0.142",mode: "bridge",bridge: "Intel(R) I211 Gigabit Network Connection",nic_type: "virtio"
-    ol9_apache_ha.vm.network "private_network",ip: "172.36.12.232",nic_type: "virtio"
+    ol9_server02.vm.network "public_network",nic_type: "virtio",ip: "192.168.0.131",mode: "bridge",bridge: [
+      "Intel(R) I211 Gigabit Network Connection"
+    ]
+    ol9_server02.vm.network "private_network",ip: "172.36.12.231",nic_type: "virtio"
 
     # MOUNTS
-    ol9_apache_ha.vm.synced_folder ".", "/vagrant", disabled: true
-    ol9_apache_ha.vm.synced_folder "../../Security/", "/home/vagrant/security"
-    ol9_apache_ha.vm.synced_folder "./configs", "/home/vagrant/configs"
-    ol9_apache_ha.vm.synced_folder "../../Scripts/lpic2/", "/home/vagrant/scripts"
+    ol9_server02.vm.synced_folder ".", "/vagrant", disabled: true
+    ol9_server02.vm.synced_folder "../../../security/", "/home/vagrant/security"
+    ol9_server02.vm.synced_folder "../../../configs/linux/", "/home/vagrant/configs"
+    ol9_server02.vm.synced_folder "../../../scripts/linux/", "/home/vagrant/scripts"
 
     # PROVIDER
-    ol9_apache_ha.vm.provider "virtualbox" do |vb|
+    ol9_server02.vm.provider "virtualbox" do |vb|
       vb.linked_clone = true
-      vb.name =VM_HA_NAME
+      vb.name =VM_OL9_SERVER02
       vb.memory = 2048
-      vb.cpus = 1
+      vb.cpus = 2
     end
 
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    ol9_apache_ha.vm.provision "shell", path: "scripts/user-data-ol9.sh"
+    ol9_server02.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-ol9.sh"
 
-    # CONFIGURE APACHE HTTP
-    ol9_apache_ha.vm.provision "shell", path: "scripts/user-data-ol9-apache-ha.sh"
+    # GENERATE CERTIFICATES FOR NGINX
+    ol9_server02.vm.provision "shell", path: "../../../scripts/linux/commons/generate-certificates.sh" 
 
-    # GENERATE CERTIFICATES FOR APACHE
-    ol9_apache_ha.vm.provision "shell", path: "scripts/generate-certificates.sh" 
+    # CONFIGURE NGINX REVERSE PROXY
+    ol9_server02.vm.provision "shell", path: "../../../scripts/linux/nginx/userdata-nginx-proxy.sh"
+    
   end
 
-  # VM ol9_nginx_ha
-  config.vm.define "ol9-nginx-ha"  do |ol9_nginx_ha|
-    ol9_nginx_ha.vm.box = BOX_OL_NAME
-    ol9_nginx_ha.vm.box_url = "#{BOX_OL_URL}/#{BOX_OL_NAME}.json"
+  # VM debian_server01 - NGINX Node 1
+  config.vm.define "debian-server01"  do |debian_server01|
+    debian_server01.vm.box = BOX_DEBIAN_NAME
 
     # VARIABLE HOSTNAME
-    VM_HA_NGINX_NAME= "ol9-nginx-ha"
-
-    # HOSTNAM
-    ol9_nginx_ha.vm.hostname =VM_HA_NGINX_NAME
-
-    # NETWORK
-    ol9_nginx_ha.vm.network "public_network",ip: "192.168.0.143",mode: "bridge",bridge: "Intel(R) I211 Gigabit Network Connection",nic_type: "virtio"
-    ol9_nginx_ha.vm.network "private_network",ip: "172.36.12.233",nic_type: "virtio"
-
-    # MOUNTS
-    ol9_nginx_ha.vm.synced_folder ".", "/vagrant", disabled: true
-    ol9_nginx_ha.vm.synced_folder "../../Security/", "/home/vagrant/security"
-    ol9_nginx_ha.vm.synced_folder "./configs", "/home/vagrant/configs"
-    ol9_nginx_ha.vm.synced_folder "../../Scripts/lpic2/", "/home/vagrant/scripts"
-
-    # PROVIDER
-    ol9_nginx_ha.vm.provider "virtualbox" do |vb|
-      vb.linked_clone = true
-      vb.name =VM_HA_NGINX_NAME
-      vb.memory = 2048
-      vb.cpus = 1
-    end
-
-    # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    ol9_nginx_ha.vm.provision "shell", path: "scripts/user-data-ol9.sh"
-
-    # CONFIGURE NGINX HTTP
-    ol9_nginx_ha.vm.provision "shell", path: "scripts/user-data-ol9-nginx-ha.sh"    
-  end
-
-  # VM debian_apache_node01
-  config.vm.define "debian-apache-node01"  do |debian_apache_node01|
-    debian_apache_node01.vm.box = BOX_DEBIAN_NAME
-
-    # VARIABLE HOSTNAME
-    VM_NODE01_NAME= "debian-apache-node01"
+      VM_DEBIAN_SERVER01= "debian-server01"
 
     # HOSTNAME
-    debian_apache_node01.vm.hostname =VM_NODE01_NAME
+    debian_server01.vm.hostname =  VM_DEBIAN_SERVER01
 
     # NETWORK
-    debian_apache_node01.vm.network "public_network",ip: "192.168.0.144",mode: "bridge",bridge: "Intel(R) I211 Gigabit Network Connection"
-    debian_apache_node01.vm.network "private_network",ip: "172.36.12.234"
+    debian_server01.vm.network "public_network",ip: "192.168.0.140",mode: "bridge",bridge:[
+      "Intel(R) I211 Gigabit Network Connection"
+    ]
+    debian_server01.vm.network "private_network",ip: "172.36.12.240"
 
     # MOUNTS
-    debian_apache_node01.vm.synced_folder ".", "/vagrant", disabled: true
-    debian_apache_node01.vm.synced_folder "../../Security/", "/home/vagrant/security"
-    debian_apache_node01.vm.synced_folder "./configs", "/home/vagrant/configs"
-    debian_apache_node01.vm.synced_folder "../../Scripts/lpic2/", "/home/vagrant/scripts"
+    debian_server01.vm.synced_folder ".", "/vagrant", disabled: true
+    debian_server01.vm.synced_folder "../../../security/", "/home/vagrant/security"
+    debian_server01.vm.synced_folder "../../../configs/linux/", "/home/vagrant/configs"
+    debian_server01.vm.synced_folder "../../../scripts/linux/", "/home/vagrant/scripts"
 
     #PROVIDER
-    debian_apache_node01.vm.provider "virtualbox" do |vb|
+    debian_server01.vm.provider "virtualbox" do |vb|
       vb.linked_clone = true
-      vb.name =VM_NODE01_NAME
+      vb.name =  VM_DEBIAN_SERVER01
       vb.memory = 2048
       vb.cpus = 1
     end
 
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    debian_apache_node01.vm.provision "shell", path: "scripts/user-data-debian.sh"
+    debian_server01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-    # CONFIGURE APACHE HTTP
-    debian_apache_node01.vm.provision "shell", path: "scripts/user-data-debian-apache-node01.sh"
+    # CONFIGURE NGINX NODE 1
+    debian_server01.vm.provision "shell", path: "../../../scripts/linux/nginx/userdata-nginx-node.sh"
+    
   end
 
-  # VM debian_apache_node02
-  config.vm.define "debian-apache-node02"  do |debian_apache_node02|
-    debian_apache_node02.vm.box = BOX_DEBIAN_NAME
+  # VM debian_server02 - NGINX Node 2
+  config.vm.define "debian-server02"  do |debian_server02|
+    debian_server02.vm.box = BOX_DEBIAN_NAME
 
     # VARIABLE HOSTNAME
-    VM_NODE02_NAME= "debian-apache-node02"
+      VM_DEBIAN_SERVER02= "debian-server02"
 
     # HOSTNAME
-    debian_apache_node02.vm.hostname =VM_NODE02_NAME
+    debian_server02.vm.hostname =  VM_DEBIAN_SERVER02
 
     # NETWORK
-    debian_apache_node02.vm.network "public_network",ip: "192.168.0.145",mode: "bridge",bridge: "Intel(R) I211 Gigabit Network Connection"
-    debian_apache_node02.vm.network "private_network",ip: "172.36.12.235"
+    debian_server02.vm.network "public_network",ip: "192.168.0.141",mode: "bridge",bridge: [
+      "Intel(R) I211 Gigabit Network Connection"
+    ]
+    debian_server02.vm.network "private_network",ip: "172.36.12.241"
 
     # MOUNTS
-    debian_apache_node02.vm.synced_folder ".", "/vagrant", disabled: true
-    debian_apache_node02.vm.synced_folder "../../Security/", "/home/vagrant/security"
-    debian_apache_node02.vm.synced_folder "./configs", "/home/vagrant/configs"
-    debian_apache_node02.vm.synced_folder "../../Scripts/lpic2/", "/home/vagrant/scripts"
+    debian_server02.vm.synced_folder ".", "/vagrant", disabled: true
+    debian_server02.vm.synced_folder "../../../security/", "/home/vagrant/security"
+    debian_server02.vm.synced_folder "../../../configs/linux/", "/home/vagrant/configs"
+    debian_server02.vm.synced_folder "../../../scripts/linux/", "/home/vagrant/scripts"
 
     #PROVIDER
-    debian_apache_node02.vm.provider "virtualbox" do |vb|
+    debian_server02.vm.provider "virtualbox" do |vb|
       vb.linked_clone = true
-      vb.name =VM_NODE02_NAME
+      vb.name =  VM_DEBIAN_SERVER02
       vb.memory = 2048
       vb.cpus = 1
     end
 
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    debian_apache_node02.vm.provision "shell", path: "scripts/user-data-debian.sh"
+    debian_server02.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-    # CONFIGURE APACHE HTTP
-    debian_apache_node02.vm.provision "shell", path: "scripts/user-data-debian-apache-node01.sh"
+    # CONFIGURE NGINX NODE 2
+    debian_server02.vm.provision "shell", path: "../../../scripts/linux/nginx/userdata-nginx-node.sh"    
+    
   end
 
   # VM debian_client
-  config.vm.define "debian-http-client"  do |debian_http_client|
-    debian_http_client.vm.box = BOX_DEBIAN_NAME
+  config.vm.define "debian-client01"  do |debian_client01|
+    debian_client01.vm.box = BOX_DEBIAN_NAME
 
     # VARIABLE HOSTNAME
-    VM_CLIENT_NAME= "debian-http-client"
+    VM_DEBIAN_CLIENT01= "debian-client01"
 
     # HOSTNAME
-    debian_http_client.vm.hostname =VM_CLIENT_NAME
+    debian_client01.vm.hostname =VM_DEBIAN_CLIENT01
 
     # NETWORK
-    debian_http_client.vm.network "public_network",ip: "192.168.0.150",mode: "bridge",bridge: "Intel(R) I211 Gigabit Network Connection"
-    debian_http_client.vm.network "private_network",ip: "172.36.12.240"
+    debian_client01.vm.network "public_network",ip: "192.168.0.150",mode: "bridge",bridge: [
+      "Intel(R) I211 Gigabit Network Connection"
+    ]
+    debian_client01.vm.network "private_network",ip: "172.36.12.250"
 
     # MOUNTS
-    debian_http_client.vm.synced_folder ".", "/vagrant", disabled: true
-    debian_http_client.vm.synced_folder "../../Security/", "/home/vagrant/security"
-    debian_http_client.vm.synced_folder "./configs", "/home/vagrant/configs"
-    debian_http_client.vm.synced_folder "./test", "/home/vagrant/test"
-    debian_http_client.vm.synced_folder "../../Scripts/lpic2/", "/home/vagrant/scripts"
+    debian_client01.vm.synced_folder ".", "/vagrant", disabled: true
+    debian_client01.vm.synced_folder "../../../security/", "/home/vagrant/security"
+    debian_client01.vm.synced_folder "../../../configs/linux/", "/home/vagrant/configs"
+    debian_client01.vm.synced_folder "../../../scripts/linux/", "/home/vagrant/scripts"
+    debian_client01.vm.synced_folder "../../../test/linux/", "/home/vagrant/test"
 
     #PROVIDER
-    debian_http_client.vm.provider "virtualbox" do |vb|
+    debian_client01.vm.provider "virtualbox" do |vb|
       vb.linked_clone = true
-      vb.name =VM_CLIENT_NAME
+      vb.name =VM_DEBIAN_CLIENT01
       vb.memory = 8192
       vb.cpus = 3
     end
 
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    debian_http_client.vm.provision "shell", path: "scripts/user-data-debian.sh"
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-    # CONFIGURE CLIENT HTTP CLIENT
-    debian_http_client.vm.provision "shell", path: "scripts/user-data-debian-http-client.sh"
-
-    # CHECK HTTP STACK
-    debian_http_client.vm.provision "shell", path: "scripts/check-http-stack.sh"
+    # CONFIGURE NGINX CLIENT
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/nginx/userdata-nginx-client.sh"
+    
+    # CHECK NGINX STACK
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/nginx/check-nginx-stack.sh"
+    
   end
 
 end

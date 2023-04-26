@@ -156,6 +156,7 @@ update-ca-trust
 
 # Copy certificates for share
 cp -p /etc/ssl/certs/skynet.com.br-ca-cert.pem /etc/ssl/certs/skynet.com.br-client-cert.p12 configs/apache/security
+cp -p /etc/ssl/certs/skynet.com.br-ca-cert.pem /etc/ssl/certs/skynet.com.br-client-cert.p12 configs/nginx/security
 
 # Restart apache service
 #apachectl configtest

@@ -4,7 +4,7 @@
     Requirments: none
     Description: Script for configure server http client
     Author: Marcos Silvestrini
-    Date: 18/04/2023
+    Date: 24/04/2023
 MULTILINE-COMMENT
 
 export LANG=C

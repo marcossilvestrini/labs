@@ -48,7 +48,6 @@ $fs = "$baseVagrantfile\linux\fs"
 $dhcp = "$baseVagrantfile\linux\dhcp"
 $openldap = "$baseVagrantfile\linux\openldap"
 $postfix = "$baseVagrantfile\linux\postfix"
-$security = "$baseVagrantfile\linux\security"
 
 # Folder vagrant virtualbox machines artefacts
 $vmFolders = @(    
@@ -87,9 +86,7 @@ Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destr
 Set-Location $postfix
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
-#Destroy security stack
-Set-Location $security
-Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
 
 # Delete folder virtualbox machines artefacts
 $vmFolders | ForEach-Object {

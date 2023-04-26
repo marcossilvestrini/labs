@@ -109,9 +109,19 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
 
-# Up Servers Apache
-$apache = "$baseVagrantfile\linux\apache"
-Set-Location $apache
+# # Up Servers Apache
+# $apache = "$baseVagrantfile\linux\apache"
+# Set-Location $apache
+# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
+# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+# Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+# Up Servers Nginx
+$nginx = "$baseVagrantfile\linux\nginx"
+Set-Location $nginx
 Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02

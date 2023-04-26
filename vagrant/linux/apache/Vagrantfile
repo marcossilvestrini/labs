@@ -236,6 +236,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     debian_client01.vm.provision "shell", path: "../../../scripts/linux/apache/userdata-apache-client.sh"
     
     # CHECK APACHE STACK
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/apache/check-apache-stack.sh"
     
   end
 

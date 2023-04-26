@@ -164,5 +164,6 @@ Project Link: [https://github.com/marcossilvestrini/labs](https://github.com/mar
 * [http Logging](https://www.zytrax.com/books/dns/ch7/logging.html)
 * [nginx](https://www.nginx.org/)
 * [Nginx](https://www.nginx.com/)
+* [Convert htaccess to nginx](https://winginx.com/en/htaccess)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
