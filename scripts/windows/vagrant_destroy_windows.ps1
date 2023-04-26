@@ -72,11 +72,8 @@ Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destr
 Set-Location $nginx
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
-#Destroy fs stack
-Set-Location $fs
-Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
-#Destroy dhcp_ldap stack
+#Destroy dhcp
 Set-Location $dhcp
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
@@ -96,7 +93,7 @@ Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destr
 Set-Location $nfs
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
-#Destroy nfs stack
+#Destroy pureftp stack
 Set-Location $pureFTP
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 

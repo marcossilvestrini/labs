@@ -1,1 +1,78 @@
-Test stack PureFTP
+------------------------------------------------------
+Check pure-ftp Stack for This Lab
+Date: 2023-04-26 16:46:29
+------------------------------------------------------
+
+------------------------------------------------------
+Check Status of pure-ftp in server 192.168.0.130...
+
+     Active: active (running) since Wed 2023-04-26 16:41:48 -03; 4min 41s ago
+------------------------------------------------------
+------------------------------------------------------
+Check Status of pure-ftp in server 192.168.0.140...
+
+     Active: active (running) since Wed 2023-04-26 16:44:17 -03; 2min 12s ago
+------------------------------------------------------
+Check version of pure-ftp in server 192.168.0.130...
+
+Last metadata expiration check: 0:05:18 ago on Wed 26 Apr 2023 04:41:12 PM -03.
+Installed Packages
+Name         : pure-ftpd
+Version      : 1.0.49
+Release      : 4.el8
+Architecture : x86_64
+Size         : 681 k
+Source       : pure-ftpd-1.0.49-4.el8.src.rpm
+Repository   : @System
+From repo    : epel
+Summary      : Lightweight, fast and secure FTP server
+URL          : http://www.pureftpd.org
+License      : BSD
+Description  : Pure-FTPd is a fast, production-quality, standard-comformant FTP server,
+             : based upon Troll-FTPd. Unlike other popular FTP servers, it has no known
+             : security flaw, it is really trivial to set up and it is especially designed
+             : for modern Linux and FreeBSD kernels (setfsuid, sendfile, capabilities) .
+             : Features include PAM support, IPv6, chroot()ed home directories, virtual
+             : domains, built-in LS, anti-warez system, bandwidth throttling, FXP, bounded
+             : ports for passive downloads, UL/DL ratios, native LDAP and SQL support,
+             : Apache log files and more.
+             : Rebuild switches:
+             : --without ldap     disable ldap support
+             : --without mysql    disable mysql support
+             : --without pgsql    disable postgresql support
+             : --without extauth  disable external authentication
+             : --without tls      disable SSL/TLS
+
+------------------------------------------------------
+Check version of pure-ftp in server 192.168.0.140...
+
+Package: pure-ftpd
+Versions: 
+1.0.49-4.1 (/var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_binary-amd64_Packages) (/var/lib/dpkg/status)
+ Description Language: 
+                 File: /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_binary-amd64_Packages
+                  MD5: c224dc177bd93932c8270a67cd35b6aa
+ Description Language: en
+                 File: /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_i18n_Translation-en
+                  MD5: c224dc177bd93932c8270a67cd35b6aa
+
+
+Reverse Depends: 
+  pure-ftpd-common,pure-ftpd 1.0.0
+  pure-ftpd-postgresql,pure-ftpd
+  pure-ftpd-postgresql,pure-ftpd
+  pure-ftpd-mysql,pure-ftpd
+  pure-ftpd-mysql,pure-ftpd
+  pure-ftpd-ldap,pure-ftpd
+  pure-ftpd-ldap,pure-ftpd
+  mysqmail-pure-ftpd-logger,pure-ftpd
+  pure-ftpd-common,pure-ftpd
+Dependencies: 
+1.0.49-4.1 - lsb-base (2 3.2-14) openbsd-inetd (16 (null)) inet-superserver (0 (null)) pure-ftpd-common (5 1.0.49-4.1) libc6 (2 2.15) libcap2 (2 1:2.10) libcrypt1 (2 1:4.1.0) libpam0g (2 0.99.7.1) libsodium23 (2 1.0.10) libssl1.1 (2 1.1.0) ftp-server (0 (null)) ftp-server (0 (null)) 
+Provides: 
+1.0.49-4.1 - ftp-server (= ) 
+Reverse Provides: 
+pure-ftpd-postgresql 1.0.49-4.1 (= )
+pure-ftpd-mysql 1.0.49-4.1 (= )
+pure-ftpd-ldap 1.0.49-4.1 (= )
+------------------------------------------------------

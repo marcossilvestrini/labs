@@ -126,10 +126,18 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
-# Up Servers NFS
-# After up vms, execute this scripts: create_local_user.ps1,create_share.ps1 for create windows share
-$nfs = "$baseVagrantfile\linux\nfs"
-Set-Location $nfs
+# # Up Servers NFS
+# $nfs = "$baseVagrantfile\linux\nfs"
+# Set-Location $nfs
+# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+
+# Up Servers Pure-FTP
+$pureftp = "$baseVagrantfile\linux\pure-ftp"
+Set-Location $pureftp
 Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
