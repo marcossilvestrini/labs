@@ -1,6 +1,6 @@
 <h1><a name="readme-top"></a></h1>
 
-[![Check Samba Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml)
+[![Check NFS Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml)
 
 # FILE SHARING
 
@@ -44,11 +44,11 @@
 
 ## About Project
 
-This project up a stack of File share servers with Samba.
+This project up a stack of File share servers with NFS.
 
 ## Whats is?
 
-In this project, I up a stack of File share servers with Samba.
+In this project, I up a stack of File share servers with NFS.
 
 ### Vagrant
 
@@ -60,7 +60,7 @@ I use vagrant shell provisioner for configure samba service and others tools of 
 
 ### Git Actions (pipelines)
 
-I use git actions for create a pipeline for my test in samba stack
+I use git actions for create a pipeline for my test in NFS stack
 
 ### Slack API
 
@@ -102,7 +102,7 @@ git clone https://github.com/marcossilvestrini/labs.git
 ## Usage
 
 ```sh
-cd vagrant/linux/samba
+cd vagrant/linux/nfs
 vagrant up
 ```
 
@@ -112,9 +112,9 @@ vagrant up
 
 ## Roadmap
 
-* [x] Install And Configure Samba
-  * [x] Install Samba
-  * [x] Configure Samba
+* [x] Install And Configure NFS
+  * [x] Install NFS
+  * [x] Configure NFS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,6 +148,6 @@ Project Link: [https://github.com/marcossilvestrini/labs](https://github.com/mar
 
 ## Acknowledgments
 
-* [Samba](samba.org)
+* [NFS](https://linux-nfs.org/wiki/index.php/Main_Page)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

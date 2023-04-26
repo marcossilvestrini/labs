@@ -44,10 +44,12 @@ setx VAGRANT_HOME $vagrantHome >$null
 $bind = "$baseVagrantfile\linux\dnsbind"
 $apache = "$baseVagrantfile\linux\apache"
 $nginx = "$baseVagrantfile\linux\nginx"
-$fs = "$baseVagrantfile\linux\fs"
 $dhcp = "$baseVagrantfile\linux\dhcp"
 $openldap = "$baseVagrantfile\linux\openldap"
 $postfix = "$baseVagrantfile\linux\postfix"
+$samba = "$baseVagrantfile\linux\samba"
+$nfs = "$baseVagrantfile\linux\nfs"
+$pureFTP="$baseVagrantfile\linux\pureftp"
 
 # Folder vagrant virtualbox machines artefacts
 $vmFolders = @(    
@@ -86,7 +88,17 @@ Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destr
 Set-Location $postfix
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
+#Destroy samba stack
+Set-Location $samba
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
+#Destroy nfs stack
+Set-Location $nfs
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy nfs stack
+Set-Location $pureFTP
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
 # Delete folder virtualbox machines artefacts
 $vmFolders | ForEach-Object {

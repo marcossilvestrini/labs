@@ -117,10 +117,19 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
 
-# Up Servers Samba
+# # Up Servers Samba
+# # After up vms, execute this scripts: create_local_user.ps1,create_share.ps1 for create windows share
+# $samba = "$baseVagrantfile\linux\samba"
+# Set-Location $samba
+# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+# Up Servers NFS
 # After up vms, execute this scripts: create_local_user.ps1,create_share.ps1 for create windows share
-$samba = "$baseVagrantfile\linux\samba"
-Set-Location $samba
+$nfs = "$baseVagrantfile\linux\nfs"
+Set-Location $nfs
 Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01

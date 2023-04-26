@@ -135,11 +135,11 @@ Use this repository for get learning about LPIC2 202-450 exam
     * [x] Install packages
     * [x] Configure services
     * [x] Create pipeline for test services
-  * [ ] Add samba stack
-    * [ ] Up servers
-    * [ ] Install packages
-    * [ ] Configure services
-    * [ ] Create pipeline for test services
+  * [x] Add samba stack
+    * [x] Up servers
+    * [x] Install packages
+    * [x] Configure services
+    * [x] Create pipeline for test services
   * [ ] Add nfs stack
     * [ ] Up servers
     * [ ] Install packages

@@ -1,1 +1,56 @@
-Check NFS Stack
+------------------------------------------------------
+Check nfs Stack for This Lab
+Date: 2023-04-26 16:16:38
+------------------------------------------------------
+
+------------------------------------------------------
+Check Status of nfs in server 192.168.0.130...
+
+     Active: active (exited) since Wed 2023-04-26 15:38:47 -03; 37min ago
+------------------------------------------------------
+Check Status of nfs in server 192.168.0.140...
+
+     Active: active (exited) since Wed 2023-04-26 15:43:38 -03; 33min ago
+------------------------------------------------------
+Check version of nfs in server 192.168.0.130...
+
+Server rpc stats:
+calls      badcalls   badfmt     badauth    badclnt
+703        0          0          0          0       
+
+Server nfs v4:
+null             compound         
+4         0%     699      99%     
+
+Server nfs v4 operations:
+op0-unused       op1-unused       op2-future       access           close            
+0         0%     0         0%     0         0%     10        0%     0         0%     
+------------------------------------------------------
+Check version of nfs in server 192.168.0.140...
+
+Server rpc stats:
+calls      badcalls   badfmt     badauth    badclnt
+678        0          0          0          0       
+
+Server nfs v4:
+null             compound         
+1         0%     677      99%     
+
+Server nfs v4 operations:
+op0-unused       op1-unused       op2-future       access           close            
+0         0%     0         0%     0         0%     9         0%     0         0%     
+------------------------------------------------------
+Check nfs connections...
+
+tcp   ESTAB     0      0                                   172.36.12.250:680                  172.36.12.240:nfs         
+tcp   ESTAB     0      0                                   172.36.12.250:770                  172.36.12.230:nfs         
+------------------------------------------------------
+Check nfs mount points...
+
+ol9-server01:/home/vagrant /mnt/nfs-ol9-server01-home nfs4
+ol9-server01:/var/log /mnt/nfs-ol9-server01-logs nfs4
+ol9-server01:/etc /mnt/nfs-ol9-server01-etc nfs4
+debian-server01:/home/vagrant /mnt/nfs-debian-server01-home nfs4
+debian-server01:/var/log /mnt/nfs-debian-server01-logs nfs4
+debian-server01:/etc /mnt/nfs-debian-server01-etc nfs4
+------------------------------------------------------
