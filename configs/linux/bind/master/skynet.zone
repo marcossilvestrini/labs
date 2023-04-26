@@ -27,6 +27,7 @@ ol9-client01                A       172.36.12.250   ;client server
 debian-client01             A       192.168.0.150   ;client server
 debian-client01             A       172.36.12.250   ;client server
 win-silvestrini             A       192.168.0.100   ;my desktop
+win-silvestrin2             A       192.168.0.100   ;my notebook
 mail                        A       192.168.0.130   ;mail
 mail2                       A       192.168.0.140   ;mail
 ftp                         CNAME   ol9-server01    ;ftp

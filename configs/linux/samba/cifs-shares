@@ -1,0 +1,6 @@
+
+#LPIC2 CIFS shares -BEGIN
+//ol9-server01/vagrant   /mnt/samba-ol9-server01    cifs    user,credentials=/home/vagrant/.samba-access    0  0
+//debian-server01/vagrant   /mnt/samba-debian-server01    cifs    user,credentials=/home/vagrant/.samba-access    0  0
+//win-silvestrini/Projetos   /mnt/samba-windows-project    cifs    vers=3.0,user,credentials=/home/vagrant/.samba-access    0  0
+#LPIC2 CIFS shares -END

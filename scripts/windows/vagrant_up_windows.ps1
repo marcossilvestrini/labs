@@ -62,26 +62,6 @@ switch ($(hostname)) {
    Default {Write-Host "This hostname is not available for execution this script!!!";exit 1}
 }
 
-#Vagrant Boxes
-# $debian = "$baseVagrantfile\Debian"
-# $debian5 = "$baseVagrantfile\Debian5"
-# $ol9 = "$baseVagrantfile\OracleLinux"
-
-#up ol8
-# Set-Location $ol9
-# Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-# Copy-Item .\.vagrant\machines\ol9-lpic2-202\virtualbox\private_key $vagrantPK\oracle-linux9
-
-#up debian 11
-# Set-Location $debian
-# Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-# Copy-Item .\.vagrant\machines\debian_lpic2_202\virtualbox\private_key $vagrantPK\debian
-
-#up debian 5
-# Set-Location $debian5
-# Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-# Copy-Item .\.vagrant\machines\debian5_lpic2_202\virtualbox\private_key $vagrantPK\debian5
-
 #Up Servers BIND
 # $bind = "$baseVagrantfile\linux\dnsbind"
 # Set-Location $bind
@@ -119,41 +99,32 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
-# Up Servers Nginx
-$nginx = "$baseVagrantfile\linux\nginx"
-Set-Location $nginx
-Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
-Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
-Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
-Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
-
-# Up Servers FILE SHARING
-# $fs = "$baseVagrantfile\FS"
-# Set-Location $fs
-# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
-# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
-
-
-# Up Servers Mail
-# $mail = "$baseVagrantfile\MAIL"
-# Set-Location $mail
-# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
-# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
-# Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
-# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
-
-
-# $security = "$baseVagrantfile\SECURITY"
-# Set-Location $security
+# # Up Servers Nginx
+# $nginx = "$baseVagrantfile\linux\nginx"
+# Set-Location $nginx
 # Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 # Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 # Copy-Item .\.vagrant\machines\ol9-server02\virtualbox\private_key $vagrantPK\ol9-server02
 # Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+# Copy-Item .\.vagrant\machines\debian-server02\virtualbox\private_key $vagrantPK\debian-server02
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+# # Up Servers Mail
+# $mail = "$baseVagrantfile\linux\postfix"
+# Set-Location $mail
+# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+
+# Up Servers Samba
+# After up vms, execute this scripts: create_local_user.ps1,create_share.ps1 for create windows share
+$samba = "$baseVagrantfile\linux\samba"
+Set-Location $samba
+Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+Copy-Item .\.vagrant\machines\debian-server01\virtualbox\private_key $vagrantPK\debian-server01
+Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
 #Fix powershell error
 $Env:VAGRANT_PREFER_SYSTEM_BIN += 0
