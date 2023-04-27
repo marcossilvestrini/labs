@@ -61,8 +61,20 @@ mount /mnt/nfs-ol9-server01-home
 mount /mnt/nfs-ol9-server01-logs
 mount /mnt/nfs-ol9-server01-etc
 
+## Mount NFS shares server ol9-server02
+mkdir -p {/mnt/nfs-ol9-server02-home,/mnt/nfs-ol9-server02-logs,/mnt/nfs-ol9-server02-etc}
+mount /mnt/nfs-ol9-server02-home
+mount /mnt/nfs-ol9-server02-logs
+mount /mnt/nfs-ol9-server02-etc
+
 ## Mount NFS shares server debian-server01
 mkdir -p {/mnt/nfs-debian-server01-home,/mnt/nfs-debian-server01-logs,/mnt/nfs-debian-server01-etc}
 mount /mnt/nfs-debian-server01-home
 mount /mnt/nfs-debian-server01-logs
 mount /mnt/nfs-debian-server01-etc
+
+## Mount NFS shares server debian-server02
+mkdir -p {/mnt/nfs-debian-server02-home,/mnt/nfs-debian-server02-logs,/mnt/nfs-debian-server02-etc}
+mount /mnt/nfs-debian-server02-home
+mount /mnt/nfs-debian-server02-logs
+mount /mnt/nfs-debian-server02-etc

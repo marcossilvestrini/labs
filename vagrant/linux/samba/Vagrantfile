@@ -78,7 +78,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # SET DNS BIND
     ol9_server01.vm.provision "shell", path: "../../../scripts/linux/bind/userdata-bind-master.sh"
 
-    # SET POSTFIX MAIL SERVER 
+    # SET SAMBA 
     ol9_server01.vm.provision "shell", path: "../../../scripts/linux/samba/userdata-samba.sh"
 
   end
@@ -116,7 +116,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
     debian_server01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-    # CONFIGURE NGINX NODE 1
+    # CONFIGURE SAMBA SERVER
     debian_server01.vm.provision "shell", path: "../../../scripts/linux/samba/userdata-samba.sh"
     
   end
@@ -155,10 +155,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-   # SET POSTFIX MAIL CLIENT UTILS
+   # SET SAMBA CLIENT UTILS
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/samba/userdata-samba-client.sh"
 
-   # CHECK POSTFIX STACK
+   # CHECK SAMBA STACK
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/samba/check-samba-stack.sh"
 
   end

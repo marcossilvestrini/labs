@@ -1,6 +1,6 @@
 ------------------------------------------------------
 Check Bind Stack for This Lab
-Date: 2023-04-14 11:20:01
+Date: 2023-04-26 21:05:33
 ------------------------------------------------------
 
 ------------------------------------------------------
@@ -45,6 +45,11 @@ options {
 	    type master;
 	    file "0.168.192.in-addr.arpa.zone";
 	};
+--
+	zone "12.36.172.in-addr.arpa" IN {
+	    type master;
+	    file "12.36.172.in-addr.arpa.zone";
+	};	
 ------------------------------------------------------
 Get zones in file /etc/named.conf...
 
@@ -60,20 +65,20 @@ Check type records...
 ;skynet.com.br.			IN	ANY
 ------------------------------------------------------
 ;; ANSWER SECTION:
-skynet.com.br.		3600	IN	SOA	ol9-server01.skynet.com.br. admin.skynet.com.br. 1 28800 7200 604800 3600
-skynet.com.br.		3600	IN	RRSIG	SOA 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. S+oZ5S28cxmGDPEhEFmiYCq+0fdUsdk7LXQ4YfSJjSBBGLys2AJdZRPz iHYdxKeoR8dqTqhewyg/K7+M/JsVfA==
-skynet.com.br.		3600	IN	NS	ol9-server01.skynet.com.br.
+skynet.com.br.		3600	IN	SOA	ol9-server01.skynet.com.br. vagrant.skynet.com.br. 1 28800 7200 604800 3600
+skynet.com.br.		3600	IN	RRSIG	SOA 13 3 3600 20230526230244 20230426230244 29838 skynet.com.br. GSnKRbm3sJ7gyKMCqazURz4fDo0mjmjQxCTLweRDZM1l8lHt1M7yvmwA OnsOz8nOnemJH8Av5yVP4d+Tc40C0w==
 skynet.com.br.		3600	IN	NS	debian-server01.skynet.com.br.
-skynet.com.br.		3600	IN	RRSIG	NS 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. y6WrSkVMfDyhlda8u1cf86dmfyE7LSKv6LMiO02mc8Tm2G3QSt9GvW/c VGD9sRxbf3Z6X70kwoIVCExR39ayAg==
-skynet.com.br.		3600	IN	MX	10 mail2.skynet.com.br.
+skynet.com.br.		3600	IN	NS	ol9-server01.skynet.com.br.
+skynet.com.br.		3600	IN	RRSIG	NS 13 3 3600 20230526230244 20230426230244 29838 skynet.com.br. vm1GYH0hqBVWgmogop9xSfyu+gpJIY6qRwW8zwMahEdAXlJjGA3VkjEy 0IGPdHab4XNgULFJ+e8rJ1Zr/02wsA==
 skynet.com.br.		3600	IN	MX	5 mail.skynet.com.br.
-skynet.com.br.		3600	IN	RRSIG	MX 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. kZhbp3cDLD94pUOkoMhag9uczfiDP1h3gCRjC2eqFCLoW2YJMWOCer3t RMl1TUa7IlYiDc30ETilj8OvaGaxdQ==
+skynet.com.br.		3600	IN	MX	10 mail2.skynet.com.br.
+skynet.com.br.		3600	IN	RRSIG	MX 13 3 3600 20230526230244 20230426230244 29838 skynet.com.br. +exr7cZ6IK5Smu+WCUpWGuTVAxRDDxWr2CHQtOj1YfE8+VpqZlyh1PFH tQlbmh4OlAxBLw0DAmhxAdtHMTjb4A==
 skynet.com.br.		3600	IN	TXT	"skynet - The Company for crazy people!!!"
-skynet.com.br.		3600	IN	RRSIG	TXT 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. v3OMyAGz5j6djfYcwS2ZVFYA5B0l/ZJPTlbS0I91+XQypPR1IhTPVFPT nnYBq3aq3FhCJb1X5UEyO10QSiOSHg==
-skynet.com.br.		3600	IN	NSEC	debian-server01.skynet.com.br. NS SOA MX TXT RRSIG NSEC DNSKEY
-skynet.com.br.		3600	IN	RRSIG	NSEC 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. UQTO9YwyYZOJUZzAMEpV+qXN5U0CTGBQdLGCdvZnciWWCxAjrAkFpppx T/Yjh6i7dO0YC+21dIVEim4JOvtz1w==
+skynet.com.br.		3600	IN	RRSIG	TXT 13 3 3600 20230526230244 20230426230244 29838 skynet.com.br. UW8knghRQ+n6iX7a6rsc8lcay2USaqZ71VoCK7CdpYa5ozAy/y0Cszqv Mrg3mE1XO1AeyqzYsfmbkKkzo/JJRA==
+skynet.com.br.		3600	IN	NSEC	debian-client01.skynet.com.br. NS SOA MX TXT RRSIG NSEC DNSKEY
+skynet.com.br.		3600	IN	RRSIG	NSEC 13 3 3600 20230526230244 20230426230244 29838 skynet.com.br. EDU+r1Y4hxcYeLxhsgKpO5thovWsNHHMaweaPDcxEPnpDw479hxwGV/Z fdZzGNnyz0F4hdcVMlEdI9S1VdwDhA==
 skynet.com.br.		3600	IN	DNSKEY	256 3 13 qzYHNPMPd6QjO66oHI4RL95LBSb3wRuEGJSXgByHJalof0DBJOucDKE1 MMudvv7eNoOabO+m91rQKUbRw6n/Vg==
-skynet.com.br.		3600	IN	RRSIG	DNSKEY 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. Z6x1wuvbmQ+NVY2x/lJRC6jJsjSD44Z8Sp10GmHEhkYUejuvF1mKrU9p 4x7sPJ3+FLs0ZvqUGKDPX11piGu8Bw==
+skynet.com.br.		3600	IN	RRSIG	DNSKEY 13 3 3600 20230526230244 20230426230244 29838 skynet.com.br. bxwWz4oWmQ5wVmqprm69Du6+Y0TW9N95WHRdza9/Fobc7w7TJDG2eAo3 N+u0/heXWeqjXS3I6xqfLuZKjaneyQ==
 
 ;; ADDITIONAL SECTION:
 ol9-server01.skynet.com.br. 3600 IN	A	172.36.12.230
@@ -100,120 +105,15 @@ Check Bind Slave...
 
 Check version of bind...
 
-version.bind.		0	CH	TXT	"9.16.37-Debian"
 ------------------------------------------------------
 Check file /etc/named.conf...
 
-key "skynet.com.br" {
-	algorithm hmac-sha256;
-	secret "aIYTlJfNDaIvBEvTk7zjCm3beP3RzLAiJPtFvs5/mkE=";
-};
-
-server 192.168.0.130 {
-        keys { skynet.com.br; };
-};
-
-zone "skynet.com.br" {
-        type slave;
-        masters { 192.168.0.130; };
-        file "skynet.zone";
-};
 ------------------------------------------------------
 Check file zone...
 
--rw-r--r-- 1 bind bind 5638 Apr 14 11:08 /var/cache/bind/skynet.zone
-skynet.com.br.				      3600 IN SOA	ol9-server01.skynet.com.br. admin.skynet.com.br. 1 28800 7200 604800 3600
-skynet.com.br.				      3600 IN RRSIG	SOA 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. S+oZ5S28cxmGDPEhEFmiYCq+0fdUsdk7LXQ4YfSJjSBBGLys2AJdZRPz iHYdxKeoR8dqTqhewyg/K7+M/JsVfA==
-; resign=20230514130550
-skynet.com.br.				      3600 IN NS	ol9-server01.skynet.com.br.
-skynet.com.br.				      3600 IN NS	debian-server01.skynet.com.br.
-skynet.com.br.				      3600 IN RRSIG	NS 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. y6WrSkVMfDyhlda8u1cf86dmfyE7LSKv6LMiO02mc8Tm2G3QSt9GvW/c VGD9sRxbf3Z6X70kwoIVCExR39ayAg==
-; resign=20230514130550
-skynet.com.br.				      3600 IN MX	5 mail.skynet.com.br.
-skynet.com.br.				      3600 IN MX	10 mail2.skynet.com.br.
-skynet.com.br.				      3600 IN RRSIG	MX 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. kZhbp3cDLD94pUOkoMhag9uczfiDP1h3gCRjC2eqFCLoW2YJMWOCer3t RMl1TUa7IlYiDc30ETilj8OvaGaxdQ==
-; resign=20230514130550
-skynet.com.br.				      3600 IN TXT	"skynet - The Company for crazy people!!!"
-skynet.com.br.				      3600 IN RRSIG	TXT 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. v3OMyAGz5j6djfYcwS2ZVFYA5B0l/ZJPTlbS0I91+XQypPR1IhTPVFPT nnYBq3aq3FhCJb1X5UEyO10QSiOSHg==
-; resign=20230514130550
-skynet.com.br.				      3600 IN NSEC	debian-server01.skynet.com.br. NS SOA MX TXT RRSIG NSEC DNSKEY
-skynet.com.br.				      3600 IN RRSIG	NSEC 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. UQTO9YwyYZOJUZzAMEpV+qXN5U0CTGBQdLGCdvZnciWWCxAjrAkFpppx T/Yjh6i7dO0YC+21dIVEim4JOvtz1w==
-; resign=20230514130550
-skynet.com.br.				      3600 IN DNSKEY	256 3 13 qzYHNPMPd6QjO66oHI4RL95LBSb3wRuEGJSXgByHJalof0DBJOucDKE1 MMudvv7eNoOabO+m91rQKUbRw6n/Vg==
-skynet.com.br.				      3600 IN RRSIG	DNSKEY 13 3 3600 20230514130550 20230414130550 29838 skynet.com.br. Z6x1wuvbmQ+NVY2x/lJRC6jJsjSD44Z8Sp10GmHEhkYUejuvF1mKrU9p 4x7sPJ3+FLs0ZvqUGKDPX11piGu8Bw==
-; resign=20230514130550
-debian-server01.skynet.com.br.		      3600 IN A		172.36.12.240
-debian-server01.skynet.com.br.		      3600 IN A		192.168.0.140
-debian-server01.skynet.com.br.		      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. j62YhwfqU3IVafQ8yxrjhH07m8KPjmGszJPIPO4gDR6Kg8yXmhx0x/7E v2U+30sSeaWmpWZcf/WTzawFeiHy8Q==
-; resign=20230514130550
-debian-server01.skynet.com.br.		      3600 IN NSEC	debian-server02.skynet.com.br. A RRSIG NSEC
-debian-server01.skynet.com.br.		      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. 34Q3/ascC9fjIRZDbf8mHcljh60hkvETOFzKanmSxfitRz6L67Dm0xI8 QISxkbFWJPOwmfNrBahf1hoZZgr4aw==
-; resign=20230514130550
-debian-server02.skynet.com.br.		      3600 IN A		172.36.12.241
-debian-server02.skynet.com.br.		      3600 IN A		192.168.0.141
-debian-server02.skynet.com.br.		      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. WyGRk4kiq1vod/ynB0uGsepiNpSFjsmLpIjQXa0AA/6fn5Bf+GqObZTO QbEVOYIVcsqLxcNp3ywlG/6icxTTSA==
-; resign=20230514130550
-debian-server02.skynet.com.br.		      3600 IN NSEC	ftp.skynet.com.br. A RRSIG NSEC
-debian-server02.skynet.com.br.		      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. RfzphW+uvBMOGPSjODM+CYEmIwvmYl0YXM+VnX5brSeDNagzK/87x9pl Gb1JZb2RCNVKwsZ7TQ9/W0Gf8xu4gA==
-; resign=20230514130550
-ftp.skynet.com.br.			      3600 IN CNAME	ol9-server01.skynet.com.br.
-ftp.skynet.com.br.			      3600 IN RRSIG	CNAME 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. NS7Vd03Fo0IaPW/+AcahTeIUsvpkvoiGOO4OAGD8OC4u4olXh6u3ODhJ wPA9vWfAJ5IC2cK10+vjDMmJd+tkCw==
-; resign=20230514130550
-ftp.skynet.com.br.			      3600 IN NSEC	mail.skynet.com.br. CNAME RRSIG NSEC
-ftp.skynet.com.br.			      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. 65s09DCXEz8GduK9T1/zJxBXo1QvmuCWcaVq662WTR1ej/WpDlJw3OLQ C7glkblq+ImDGzrPQZQGfpC0JZy+Fw==
-; resign=20230514130550
-mail.skynet.com.br.			      3600 IN A		192.168.0.130
-mail.skynet.com.br.			      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. iN6IuW4L/ohoKsxQYLYNfna3vvnvULlwK74MJ13DDq9svrubD7Y6bu4k XJJyto6y2qWuRSdTc1ACosNOMnc2Sg==
-; resign=20230514130550
-mail.skynet.com.br.			      3600 IN NSEC	mail2.skynet.com.br. A RRSIG NSEC
-mail.skynet.com.br.			      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. X5GN/+gp744RGGbZPaJrc0A6yxSvseRqj865fBGP47gVxd1kjZaYo46I lPEplEv1mej94HsnPGjaOtXRwrmX8g==
-; resign=20230514130550
-mail2.skynet.com.br.			      3600 IN A		192.168.0.140
-mail2.skynet.com.br.			      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. YIdYJkdtgy7/SvoSG8rh2L2FISLubfO872kzrZd0J+LMJIFqkPyCr7x0 FORlxwQYpNlPQR2QHXdWbQMdI0kUdg==
-; resign=20230514130550
-mail2.skynet.com.br.			      3600 IN NSEC	ol9-client01.skynet.com.br. A RRSIG NSEC
-mail2.skynet.com.br.			      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. m/IaUYcWaTov52/b5BwFw8wPGLoBhryIWiBpdTYgXJk24AK1twaTkjvG Dru0pN7H8z5JuuIn434No5Kv/qM9xw==
-; resign=20230514130550
-ol9-client01.skynet.com.br.		      3600 IN A		172.36.12.250
-ol9-client01.skynet.com.br.		      3600 IN A		192.168.0.150
-ol9-client01.skynet.com.br.		      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. socog3RA9i1uWaxLmA84A1zzVT+lQjop5/42Io/6uJe+wzbKNJXQznfw Z8uMT60E7ldtVar8bYUV8BEbSUqKOg==
-; resign=20230514130550
-ol9-client01.skynet.com.br.		      3600 IN NSEC	ol9-server01.skynet.com.br. A RRSIG NSEC
-ol9-client01.skynet.com.br.		      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. MuBYvY+lLipa2Dq9zuhPYKpCKy8IkC+11WtprS7tMbWR1Zx386KPMO3O xSgtwmQRN2p/GMIf89seXMmnxZdsfA==
-; resign=20230514130550
-ol9-server01.skynet.com.br.		      3600 IN A		172.36.12.230
-ol9-server01.skynet.com.br.		      3600 IN A		192.168.0.130
-ol9-server01.skynet.com.br.		      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. ZX3zsWFVHBYNHy2bSKBmHaAkEQlf+USpIsW3btsEdnkZveBg56UO/sBX 7IHraImVbhpQdpBHyJ5LjtJsSp6ajA==
-; resign=20230514130550
-ol9-server01.skynet.com.br.		      3600 IN NSEC	ol9-server02.skynet.com.br. A RRSIG NSEC
-ol9-server01.skynet.com.br.		      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. MLniP+f8W7Dl/fL5Uurdmvdu9rbbyOWSaupwMyKwDGFamcR7h27XZYDQ DKihMbiermGvqcZe3FdBZ22hZnuGmg==
-; resign=20230514130550
-ol9-server02.skynet.com.br.		      3600 IN A		172.36.12.231
-ol9-server02.skynet.com.br.		      3600 IN A		192.168.0.131
-ol9-server02.skynet.com.br.		      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. c/SJ8UGsobX+J6EgMIVc6HxEOHgcqoVeSQd1OaBm1MX2szRoX+o7gHS9 9rVGyfIlhiPgcfeKkb7sKJaYY2nbKQ==
-; resign=20230514130550
-ol9-server02.skynet.com.br.		      3600 IN NSEC	silvestrini.skynet.com.br. A RRSIG NSEC
-ol9-server02.skynet.com.br.		      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. r/YA/gV5wmL412RANGbfOMPArPRW0sJkTyvHHgPC+43KeibdkCWigLYe wkrFEDf21Crw8IgCaZ+Reg8GwqvHTQ==
-; resign=20230514130550
-silvestrini.skynet.com.br.		      3600 IN A		192.168.0.100
-silvestrini.skynet.com.br.		      3600 IN RRSIG	A 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. u5RPGBYLdQBu9BJ4klT5ALANTxfG5tlzyudGIk3f8rCRlp64QMTWG/XG aKvsUtJURCyrBc8BrD+shLSp/elWnw==
-; resign=20230514130550
-silvestrini.skynet.com.br.		      3600 IN NSEC	www.skynet.com.br. A RRSIG NSEC
-silvestrini.skynet.com.br.		      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. DHwkvEIaHPMH0iSoLemdIZjPqJKnP2m5yiaeRcpNk/XJciQRVLjnWEYB xQFfXCph3uTLUivQliw5XDxQTg+30A==
-; resign=20230514130550
-www.skynet.com.br.			      3600 IN CNAME	ol9-server01.skynet.com.br.
-www.skynet.com.br.			      3600 IN RRSIG	CNAME 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. /OcrjRI09T9heNIgWtxrzx8fxa2tsvuGixTxfUHlBKZ8Y3R3UDZzTPan ZAsRsLP4BdwgVyUedQy13mYnHsbNaA==
-; resign=20230514130550
-www.skynet.com.br.			      3600 IN NSEC	skynet.com.br. CNAME RRSIG NSEC
-www.skynet.com.br.			      3600 IN RRSIG	NSEC 13 4 3600 20230514130550 20230414130550 29838 skynet.com.br. N8/R3/I+F4eqqYbO2clKBxrfv3te07V2IjgFs22y1cUyPEstZVvGV4B/ X/sgHoQT5u6MamPfJIJAivp09Hqf2g==
-; resign=20230514130550
 ------------------------------------------------------
 Check transference zones...
 
-client @0x7fc53004af38 192.168.0.140#58591/key skynet.com.br (skynet.com.br): view myskynet: transfer of 'skynet.com.br/IN': AXFR started: TSIG skynet.com.br (serial 1)
-client @0x7fc53004af38 192.168.0.140#58591/key skynet.com.br (skynet.com.br): view myskynet: transfer of 'skynet.com.br/IN': AXFR ended: 1 messages, 60 records, 3986 bytes, 0.001 secs (3986000 bytes/sec) (serial 1)
-client @0x7fc538059978 192.168.0.140#43871/key skynet.com.br (skynet.com.br): view myskynet: transfer of 'skynet.com.br/IN': AXFR started: TSIG skynet.com.br (serial 1)
-client @0x7fc538059978 192.168.0.140#43871/key skynet.com.br (skynet.com.br): view myskynet: transfer of 'skynet.com.br/IN': AXFR ended: 1 messages, 60 records, 3986 bytes, 0.001 secs (3986000 bytes/sec) (serial 1)
 ------------------------------------------------------
 
 Check Bind Forwarding
@@ -221,15 +121,9 @@ Check Bind Forwarding
 
 Check version of bind...
 
-version.bind.		0	CH	TXT	"9.16.37-Debian"
 ------------------------------------------------------
 Check file /etc/named.conf...
 
-zone "skynet.com.br" {
-        type forward;
-        forwarders { 192.168.0.140; };
-        forward only;
-};
 ------------------------------------------------------
 
 Check Bind Caching...
@@ -240,64 +134,27 @@ Check version of bind...
 ------------------------------------------------------
 Check file /etc/named.conf...
 
-options {
-	listen-on port 53 { 127.0.0.1;ip-caching; };
-	listen-on-v6 port 53 { ::1; };
-	directory 	"/var/named";
-	dump-file 	"/var/named/data/cache_dump.db";
-	statistics-file "/var/named/data/named_stats.txt";
-	memstatistics-file "/var/named/data/named_mem_stats.txt";
-	secroots-file	"/var/named/data/named.secroots";
-	recursing-file	"/var/named/data/named.recursing";
-	allow-query     { localhost;public-vlan; };
-	zone "." IN {
-		type hint;
-		file "named.ca";
-	};
 ------------------------------------------------------
 Test external resolution in Bind Master
 
-; <<>> DiG 9.16.23-RH <<>> www.lpi.org @192.168.0.130 ANY
+; <<>> DiG 9.16.37-Debian <<>> www.lpi.org @192.168.0.130 ANY
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55913
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 9868
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 1232
-; COOKIE: 0b1a76b1fcb3a1a0010000006439612589fd0a877d341bd1 (good)
+; COOKIE: a73701ba30404fba010000006449bc81e3a12253fd3824d6 (good)
 ;; QUESTION SECTION:
 ;www.lpi.org.			IN	ANY
 
-;; ANSWER SECTION:
-www.lpi.org.		600	IN	A	65.39.134.147
-
-;; Query time: 1613 msec
+;; Query time: 3648 msec
 ;; SERVER: 192.168.0.130#53(192.168.0.130)
-;; WHEN: Fri Apr 14 11:20:21 -03 2023
-;; MSG SIZE  rcvd: 84
+;; WHEN: Wed Apr 26 21:06:25 -03 2023
+;; MSG SIZE  rcvd: 68
 
 ------------------------------------------------------
 Test external resolution in Bind Slave
-
-; <<>> DiG 9.16.23-RH <<>> www.lpi.org @192.168.0.140 ANY
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8086
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 1232
-; COOKIE: ac0d20551c13701801000000643961270b15b23968dbe094 (good)
-;; QUESTION SECTION:
-;www.lpi.org.			IN	ANY
-
-;; ANSWER SECTION:
-www.lpi.org.		600	IN	A	65.39.134.147
-
-;; Query time: 2035 msec
-;; SERVER: 192.168.0.140#53(192.168.0.140)
-;; WHEN: Fri Apr 14 11:20:23 -03 2023
-;; MSG SIZE  rcvd: 84
-
+;; Connection to 192.168.0.140#53(192.168.0.140) for www.lpi.org failed: connection refused.
 ------------------------------------------------------

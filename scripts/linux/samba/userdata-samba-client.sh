@@ -52,7 +52,9 @@ chmod 644 /etc/fstab
 
 ## Mount CIFS shares
 umount /mnt/samba-* 2>&1
-mkdir -p {/mnt/samba-debian-server01,/mnt/samba-ol9-server01,/mnt/samba-windows-project} 
+mkdir -p {/mnt/samba-debian-server01,/mnt/samba-debian-server02,/mnt/samba-ol9-server01,/mnt/samba-ol9-server02,/mnt/samba-windows-project}
 mount /mnt/samba-debian-server01
+mount /mnt/samba-debian-server02
 mount /mnt/samba-ol9-server01
+mount /mnt/samba-ol9-server02
 mount /mnt/samba-windows-project

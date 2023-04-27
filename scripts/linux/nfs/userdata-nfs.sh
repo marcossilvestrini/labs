@@ -42,5 +42,5 @@ systemctl daemon-reload
 # Restart NFS
 systemctl restart rpcbind
 systemctl restart nfs-server.service
-systemctl restart nfs-kernel-server
+#systemctl restart nfs-kernel-server
 

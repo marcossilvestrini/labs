@@ -1,6 +1,6 @@
 ------------------------------------------------------
 Check OpenLDAP Stack for This Lab
-Date: 2023-04-17 23:01:42
+Date: 2023-04-26 21:05:30
 ------------------------------------------------------
 
 Check version of openldap server...
@@ -9,16 +9,16 @@ Warning: Permanently added '192.168.0.140' (ECDSA) to the list of known hosts.
 	Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
 
 ------------------------------------------------------
-Check status of service isc openldap server...
+Check status of service openldap server...
 
 ● slapd.service - LSB: OpenLDAP standalone server (Lightweight Directory Access Protocol)
      Loaded: loaded (/etc/init.d/slapd; generated)
     Drop-In: /usr/lib/systemd/system/slapd.service.d
              └─slapd-remain-after-exit.conf
-     Active: active (running) since Mon 2023-04-17 22:58:02 -03; 3min 41s ago
+     Active: active (running) since Wed 2023-04-26 21:03:59 -03; 1min 31s ago
 --
      CGroup: /system.slice/slapd.service
-             └─24203 /usr/sbin/slapd -h ldap:/// ldapi:/// -g openldap -u openldap -F /etc/ldap/slapd.d
+             └─37231 /usr/sbin/slapd -h ldap:/// ldapi:/// -g openldap -u openldap -F /etc/ldap/slapd.d
 
 ------------------------------------------------------
 Find Informations in OpenLDAP Custom Database [ dc=skynet,dc=com,dc=br cn=Marcos]...

@@ -1,56 +1,64 @@
 ------------------------------------------------------
 Check nfs Stack for This Lab
-Date: 2023-04-26 16:16:38
+Date: 2023-04-26 21:06:27
 ------------------------------------------------------
 
 ------------------------------------------------------
 Check Status of nfs in server 192.168.0.130...
 
-     Active: active (exited) since Wed 2023-04-26 15:38:47 -03; 37min ago
+     Active: active (exited) since Wed 2023-04-26 21:02:56 -03; 3min 31s ago
 ------------------------------------------------------
 Check Status of nfs in server 192.168.0.140...
 
-     Active: active (exited) since Wed 2023-04-26 15:43:38 -03; 33min ago
+     Active: active (exited) since Wed 2023-04-26 21:04:04 -03; 2min 23s ago
 ------------------------------------------------------
 Check version of nfs in server 192.168.0.130...
 
 Server rpc stats:
 calls      badcalls   badfmt     badauth    badclnt
-703        0          0          0          0       
+105        0          0          0          0       
 
 Server nfs v4:
 null             compound         
-4         0%     699      99%     
+1         0%     104      99%     
 
 Server nfs v4 operations:
 op0-unused       op1-unused       op2-future       access           close            
-0         0%     0         0%     0         0%     10        0%     0         0%     
+0         0%     0         0%     0         0%     5         1%     0         0%     
 ------------------------------------------------------
 Check version of nfs in server 192.168.0.140...
 
 Server rpc stats:
 calls      badcalls   badfmt     badauth    badclnt
-678        0          0          0          0       
+93         0          0          0          0       
 
 Server nfs v4:
 null             compound         
-1         0%     677      99%     
+1         1%     92       98%     
 
 Server nfs v4 operations:
 op0-unused       op1-unused       op2-future       access           close            
-0         0%     0         0%     0         0%     9         0%     0         0%     
+0         0%     0         0%     0         0%     5         1%     0         0%     
 ------------------------------------------------------
 Check nfs connections...
 
-tcp   ESTAB     0      0                                   172.36.12.250:680                  172.36.12.240:nfs         
-tcp   ESTAB     0      0                                   172.36.12.250:770                  172.36.12.230:nfs         
+tcp   ESTAB     0      0                                   192.168.0.150:925                  192.168.0.140:nfs                
+tcp   ESTAB     0      0                                   192.168.0.150:671                  192.168.0.130:nfs                
+tcp   ESTAB     0      0                                   192.168.0.150:781                  192.168.0.131:nfs                
+tcp   ESTAB     0      0                                   192.168.0.150:788                  192.168.0.141:nfs                
 ------------------------------------------------------
 Check nfs mount points...
 
 ol9-server01:/home/vagrant /mnt/nfs-ol9-server01-home nfs4
 ol9-server01:/var/log /mnt/nfs-ol9-server01-logs nfs4
 ol9-server01:/etc /mnt/nfs-ol9-server01-etc nfs4
+ol9-server02:/home/vagrant /mnt/nfs-ol9-server02-home nfs4
+ol9-server02:/var/log /mnt/nfs-ol9-server02-logs nfs4
+ol9-server02:/etc /mnt/nfs-ol9-server02-etc nfs4
 debian-server01:/home/vagrant /mnt/nfs-debian-server01-home nfs4
 debian-server01:/var/log /mnt/nfs-debian-server01-logs nfs4
 debian-server01:/etc /mnt/nfs-debian-server01-etc nfs4
+debian-server02:/home/vagrant /mnt/nfs-debian-server02-home nfs4
+debian-server02:/var/log /mnt/nfs-debian-server02-logs nfs4
+debian-server02:/etc /mnt/nfs-debian-server02-etc nfs4
 ------------------------------------------------------

@@ -116,7 +116,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
     debian_server01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-    # CONFIGURE NGINX NODE 1
+    # CONFIGURE PURE-FTP
     debian_server01.vm.provision "shell", path: "../../../scripts/linux/pure-ftp/userdata-pureftp.sh"
     
   end
@@ -155,7 +155,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-   # CHECK POSTFIX STACK
+   # CHECK PURE_FTP STACK
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/pure-ftp/check-pureftp-stack.sh"
 
   end

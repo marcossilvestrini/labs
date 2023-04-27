@@ -1,15 +1,15 @@
 ------------------------------------------------------
 Check Apache Stack for This Lab
-Date: 2023-04-24 12:31:47
+Date: 2023-04-26 21:05:31
 ------------------------------------------------------
 
 ------------------------------------------------------
-Check Apache Proxy...
+Check Apache PROXY...
 ------------------------------------------------------
 
 Check Status of Apache Proxy...
 
-     Active: active (running) since Mon 2023-04-24 10:39:41 -03; 1h 52min ago
+     Active: active (running) since Wed 2023-04-26 21:03:35 -03; 1min 56s ago
 ------------------------------------------------------
 Check version of Apache Proxy...
 
@@ -39,7 +39,7 @@ Check Apache NODE01...
 
 Check status of Apache NODE01...
 
-     Active: active (running) since Mon 2023-04-24 12:07:03 -03; 24min ago
+     Active: active (running) since Wed 2023-04-26 21:04:01 -03; 1min 30s ago
 ------------------------------------------------------
 Check version of Apache NODE01...
 
@@ -67,7 +67,7 @@ Check Apache NODE02...
 
 Check status of Apache NODE02...
 
-     Active: active (running) since Mon 2023-04-24 12:21:57 -03; 9min ago
+     Active: active (running) since Wed 2023-04-26 21:04:16 -03; 1min 16s ago
 ------------------------------------------------------
 Check version of Apache NODE02...
 

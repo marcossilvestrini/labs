@@ -1,17 +1,17 @@
 ------------------------------------------------------
 Check Samba Stack for This Lab
-Date: 2023-04-26 14:47:51
+Date: 2023-04-26 21:06:32
 ------------------------------------------------------
 
 ------------------------------------------------------
 Check Status of samba in server 192.168.0.130...
 
-     Active: active (running) since Wed 2023-04-26 13:39:37 -03; 1h 8min ago
+     Active: active (running) since Wed 2023-04-26 21:02:54 -03; 3min 37s ago
 ------------------------------------------------------
 ------------------------------------------------------
 Check Status of samba in server 192.168.0.140...
 
-     Active: active (running) since Wed 2023-04-26 13:39:48 -03; 1h 8min ago
+     Active: active (running) since Wed 2023-04-26 21:04:02 -03; 2min 29s ago
 ------------------------------------------------------
 Check version of samba in server 192.168.0.130...
 
@@ -24,6 +24,8 @@ Version 4.13.13-Debian
 Check samba cifs mount points...
 
 //debian-server01/vagrant on /mnt/samba-debian-server01 type cifs
+//debian-server02/vagrant on /mnt/samba-debian-server02 type cifs
 //ol9-server01/vagrant on /mnt/samba-ol9-server01 type cifs
+//ol9-server02/vagrant on /mnt/samba-ol9-server02 type cifs
 //win-silvestrini/Projetos on /mnt/samba-windows-project type cifs
 ------------------------------------------------------

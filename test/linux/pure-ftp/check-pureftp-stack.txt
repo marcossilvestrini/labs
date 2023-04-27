@@ -1,21 +1,21 @@
 ------------------------------------------------------
 Check pure-ftp Stack for This Lab
-Date: 2023-04-26 16:46:29
+Date: 2023-04-26 21:06:30
 ------------------------------------------------------
 
 ------------------------------------------------------
 Check Status of pure-ftp in server 192.168.0.130...
 
-     Active: active (running) since Wed 2023-04-26 16:41:48 -03; 4min 41s ago
+     Active: active (running) since Wed 2023-04-26 21:03:05 -03; 3min 24s ago
 ------------------------------------------------------
 ------------------------------------------------------
 Check Status of pure-ftp in server 192.168.0.140...
 
-     Active: active (running) since Wed 2023-04-26 16:44:17 -03; 2min 12s ago
+     Active: active (running) since Wed 2023-04-26 21:04:05 -03; 2min 25s ago
 ------------------------------------------------------
 Check version of pure-ftp in server 192.168.0.130...
 
-Last metadata expiration check: 0:05:18 ago on Wed 26 Apr 2023 04:41:12 PM -03.
+Last metadata expiration check: 0:03:51 ago on Wed 26 Apr 2023 09:02:40 PM -03.
 Installed Packages
 Name         : pure-ftpd
 Version      : 1.0.49

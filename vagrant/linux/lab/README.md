@@ -1,6 +1,15 @@
 <h1><a name="readme-top"></a></h1>
 
-[![Check PureFTP Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml)
+[![Check bind Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml)
+[![Check dhcp Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml)
+[![Check Openldap Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml)
+[![Check Apache Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-apache-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-apache-stack.yml)
+[![Check Nginx Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-nginx-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-ngix-stack.yml)
+[![Check Postfix Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-postfix-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-postfix-stack.yml)
+[![Check Samba Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml)
+[![Check NFS Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml)
+[![Check Pure-FTP Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml)
+[![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
 
 # LAB
 

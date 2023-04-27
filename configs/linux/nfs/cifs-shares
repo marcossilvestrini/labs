@@ -3,7 +3,13 @@
 ol9-server01:/home/vagrant   /mnt/nfs-ol9-server01-home    nfs    defaults    0   0
 ol9-server01:/var/log   /mnt/nfs-ol9-server01-logs    nfs    defaults    0  0
 ol9-server01:/etc   /mnt/nfs-ol9-server01-etc    nfs    defaults    0  0
+ol9-server02:/home/vagrant   /mnt/nfs-ol9-server02-home    nfs    defaults    0   0
+ol9-server02:/var/log   /mnt/nfs-ol9-server02-logs    nfs    defaults    0  0
+ol9-server02:/etc   /mnt/nfs-ol9-server02-etc    nfs    defaults    0  0
 debian-server01:/home/vagrant   /mnt/nfs-debian-server01-home    nfs    defaults    0   0
 debian-server01:/var/log   /mnt/nfs-debian-server01-logs    nfs    defaults    0  0
 debian-server01:/etc   /mnt/nfs-debian-server01-etc    nfs    defaults    0  0
+debian-server02:/home/vagrant   /mnt/nfs-debian-server02-home    nfs    defaults    0   0
+debian-server02:/var/log   /mnt/nfs-debian-server02-logs    nfs    defaults    0  0
+debian-server02:/etc   /mnt/nfs-debian-server02-etc    nfs    defaults    0  0
 #NFS shares -END

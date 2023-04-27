@@ -49,7 +49,7 @@ $openldap = "$baseVagrantfile\linux\openldap"
 $postfix = "$baseVagrantfile\linux\postfix"
 $samba = "$baseVagrantfile\linux\samba"
 $nfs = "$baseVagrantfile\linux\nfs"
-$pureFTP="$baseVagrantfile\linux\pureftp"
+$pureftp="$baseVagrantfile\linux\pure-ftp"
 
 # Folder vagrant virtualbox machines artefacts
 $vmFolders = @(    
@@ -94,7 +94,7 @@ Set-Location $nfs
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
 #Destroy pureftp stack
-Set-Location $pureFTP
+Set-Location $pureftp
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
 # Delete folder virtualbox machines artefacts

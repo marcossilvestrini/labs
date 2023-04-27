@@ -155,10 +155,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
-   # SET POSTFIX MAIL CLIENT UTILS
+   # SET NFS CLIENT UTILS
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/nfs/userdata-nfs-client.sh"
 
-   # CHECK POSTFIX STACK
+   # CHECK NFS STACK
    debian_client01.vm.provision "shell", path: "../../../scripts/linux/nfs/check-nfs-stack.sh"
 
   end

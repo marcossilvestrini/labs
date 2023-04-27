@@ -1,6 +1,6 @@
 ------------------------------------------------------
 Check ISC DHCP Stack for This Lab
-Date: 2023-04-17 14:53:30
+Date: 2023-04-26 21:06:26
 ------------------------------------------------------
 
 Check version of isc dhcp server...
@@ -9,13 +9,13 @@ isc-dhcpd-4.4.1
 Check status of service isc dhcp server...
 ● isc-dhcp-server.service - LSB: DHCP server
      Loaded: loaded (/etc/init.d/isc-dhcp-server; generated)
-     Active: active (running) since Mon 2023-04-17 14:26:30 -03; 27min ago
+     Active: active (running) since Wed 2023-04-26 21:03:58 -03; 2min 28s ago
        Docs: man:systemd-sysv-generator(8)
 --
      CGroup: /system.slice/isc-dhcp-server.service
-             └─25339 /usr/sbin/dhcpd -4 -q -cf /etc/dhcp/dhcpd.conf eth2
+             └─37160 /usr/sbin/dhcpd -4 -q -cf /etc/dhcp/dhcpd.conf eth2
 
-Apr 17 14:50:28 debian-server01 dhcpd[25339]: Dynamic and static leases present for 172.36.12.120.
+Apr 26 21:03:56 debian-server01 dhcpd[37160]: Server starting service.
 ------------------------------------------------------
 Check file /etc/dhcp/dhcpd.conf...
 
@@ -40,23 +40,9 @@ Validate dhcp leases in server...
 # authoring-byte-order entry is generated, DO NOT DELETE
 authoring-byte-order little-endian;
 
-server-duid "\000\001\000\001+\320\007\203\010\000'\363\006k";
+server-duid "\000\001\000\001+\334]\233\010\000'5\235 ";
 
 ------------------------------------------------------
 Validate dhcp leases in client...
 
-lease {
-  interface "eth2";
-  fixed-address 172.36.12.120;
-  option subnet-mask 255.255.255.0;
-  option routers 172.36.12.240;
-  option dhcp-lease-time 600;
-  option dhcp-message-type 5;
-  option domain-name-servers 192.168.0.130,172.36.12.230,1.1.1.1;
-  option dhcp-server-identifier 172.36.12.240;
-  option domain-name "skynet.com.br";
-  renew 1 2023/04/17 16:50:56;
-  rebind 1 2023/04/17 16:54:42;
-  expire 1 2023/04/17 16:55:57;
-}
 ------------------------------------------------------
