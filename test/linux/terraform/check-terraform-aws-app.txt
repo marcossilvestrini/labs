@@ -1,12 +1,12 @@
 ------------------------------------------------------
-Check AWS HTTP App for This Lab
-Date: 2023-05-24 08:59:06
+Check Terraform AWS HTTP App for This Lab
+Date: 2023-05-26 14:37:15
 ------------------------------------------------------
 
 Check AWS HTTP App Status...
 
-Site: http://54.172.26.23:8080
-Status Code: 000
-Body: 
+Site: http://54.242.169.4
+Status Code: 200
+Body: <h1><center>My Test Website With Help From Terraform Provisioner - Silvestrini</center></h1>
 ------------------------------------------------------
 

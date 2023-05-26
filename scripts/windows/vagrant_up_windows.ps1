@@ -161,16 +161,24 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
-# Up docker stack
+# # Up docker stack
 
-## Build Docker app-http
-$appFolder="$basePath\configs\linux\docker\images\app-http"
-If(! (Test-Path "$appFolder/images")){New-Item "$appFolder\images" -ItemType Directory -Force}#
-Copy-Item  "$basePath\images\labs.png" -Destination "$appFolder\images"
-Copy-Item "$basePath\index.html" -Destination $appFolder
-## Up docker stack
-$docker = "$baseVagrantfile\linux\docker"
-Set-Location $docker
+# ## Build Docker app-http
+# $appFolder="$basePath\configs\linux\docker\images\app-http"
+# If(! (Test-Path "$appFolder/images")){New-Item "$appFolder\images" -ItemType Directory -Force}#
+# Copy-Item  "$basePath\images\labs.png" -Destination "$appFolder\images"
+# Copy-Item "$basePath\index.html" -Destination $appFolder
+# ## Up docker stack
+# $docker = "$baseVagrantfile\linux\docker"
+# Set-Location $docker
+# Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
+# Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
+# Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
+
+
+# Up terraform aws stack
+$terraform = "$baseVagrantfile\linux\terraform"
+Set-Location $terraform
 Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs
 Copy-Item .\.vagrant\machines\ol9-server01\virtualbox\private_key $vagrantPK\ol9-server01
 Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01

@@ -13,7 +13,7 @@ WORKDIR="/home/vagrant"
 cd $WORKDIR || exit
 
 #Variables
-TERRAFORM_PLAN="configs/terraform"
+TERRAFORM_PLAN="configs/terraform/aws"
 
 # Destroy instance in aws
 
@@ -26,3 +26,6 @@ LoginAWS terraform
 ## destroy instance
 cd "$TERRAFORM_PLAN" || exit
 terraform destroy -auto-approve
+
+# Remove ssh key
+#aws ec2 delete-key-pair --key-name gs-ubuntu-key

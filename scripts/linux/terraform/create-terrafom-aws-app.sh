@@ -16,14 +16,25 @@ export LANG=C
 WORKDIR="/home/vagrant"
 cd $WORKDIR || exit
 
+# Variables
+TERRAFORM_PLAN="configs/terraform/aws"
+
 # Import my modules\functions for aws provider
 source scripts/linux/aws/aws-functions.sh
 
 # Login in AWS with user\IAM terraform
 LoginAWS terraform
 
+# # Create ssh key
+# aws ec2 create-key-pair \
+#     --key-name gs-ubuntu-key \
+#     --key-type ed25519 \
+#     --key-format pem \
+#     --query "KeyMaterial" \
+#     --output text > gs-ubuntu-key.pem
+
 # Create aws instance ans app for test
-cd configs/terraform || exit
+cd "$TERRAFORM_PLAN" || exit
 terraform init
-terraform plan
+terraform plan 
 terraform apply -auto-approve
