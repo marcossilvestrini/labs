@@ -21,6 +21,7 @@ Get-Process -Name *ruby* | Stop-Process -Force
 
 # Semafore for vagrant process
 $scriptPath=$PSScriptRoot
+$basePath=($scriptPath | Split-Path -Parent) | Split-Path -Parent
 $semafore="$scriptPath\vagrant-up.silvestrini"
 New-Item -ItemType File -Path $semafore -Force >$null
 
@@ -161,6 +162,13 @@ switch ($(hostname)) {
 # Copy-Item .\.vagrant\machines\debian-client01\virtualbox\private_key $vagrantPK\debian-client01
 
 # Up docker stack
+
+## Build Docker app-http
+$appFolder="$basePath\configs\linux\docker\images\app-http"
+If(! (Test-Path "$appFolder/images")){New-Item "$appFolder\images" -ItemType Directory -Force}#
+Copy-Item  "$basePath\images\labs.png" -Destination "$appFolder\images"
+Copy-Item "$basePath\index.html" -Destination $appFolder
+## Up docker stack
 $docker = "$baseVagrantfile\linux\docker"
 Set-Location $docker
 Start-Process -Wait -WindowStyle Minimized -FilePath $vagrant -ArgumentList "up"  -Verb RunAs

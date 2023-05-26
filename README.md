@@ -1,5 +1,6 @@
 <h1><a name="readme-top"></a></h1>
 
+[![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
 [![Check bind Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml)
 [![Check dhcp Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml)
 [![Check Openldap Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml)
@@ -9,7 +10,8 @@
 [![Check Samba Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml)
 [![Check NFS Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml)
 [![Check Pure-FTP Stack](https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml)
-[![PSScriptAnalyzer](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml) [![Release](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/release.yml)
+[![Check Docker App](https://github.com/marcossilvestrini/labs/actions/workflows/check-docker-app.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-docker-app.yml)
+[![Check Terraform AWS App](https://github.com/marcossilvestrini/labs/actions/workflows/check-terraform-aws-app.yml/badge.svg)](https://github.com/marcossilvestrini/labs/actions/workflows/check-terraform-aws-app.yml)
 
 [![MIT License][license-shield]][license-url]
 [![Forks][forks-shield]][forks-url]
@@ -25,7 +27,9 @@
 <p align="center">
 <strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://github.com/marcossilvestrini/labs">Main Page</a>
+    <a href="https://marcossilvestrini.github.io/labs/">Main Page</a>
+    -
+    <a href="https://github.com/marcossilvestrini/labs">Code Page</a>
     -
     <a href="https://github.com/marcossilvestrini/labs/issues">Report Bug</a>
     -
@@ -147,18 +151,48 @@ Use this repository for get learning about LPIC2 202-450 exam
     * [x] Install packages
     * [x] Configure services
     * [x] Create pipeline for test services  
-* [ ] Docker
+* [x] Docker
+  * [x] Install and Configure Docker
+    * [x] Create script for install and configure docker  
+  * [x] Generate Custom Docker App Image
+    * [x] Create dockerfile
+    * [x] Build Image
+    * [x] Push image to docker hub
+    * [x] Create container for test image
+  * [x] Create pipeline for send test in slack channel
 * [ ] Kubernetes
-* [ ] Terraform
-* [ ] Azure
+* [x] Terraform
+  * [x] Install and Configure Terraform
+    * [x] Create script for install and configure terraform  
+  * [x] Create resource in AWS Provider
+    * [x] Create aws ec2 instance in AWS
+    * [x] Create HTTP App in ec2 instance
+    * [x] Create test for HTTP App
+  * [x] Create pipeline for send test in slack channel
+* [x] Azure
+  * [x] Create Script for Install and Configure Azure cli
+  * [x] Create scripts for provisioning resources in Azure with cli
+    * [x] azure-functions
+    * [x] create-app-function
+    * [x] create-app-service
+    * [x] create-container-app
+    * [x] create-cosmosdb-database
+    * [x] create-group-user-aad
+    * [x] create-kubernetes-app
+    * [x] create-sql-single-database
+    * [x] create-storage-account
+    * [x] create-storage-blob-container
+    * [x] create-storage-file-share
+    * [x] create-vm-add-disk
+    * [x] create-vm-add-nsg-rule-http
+    * [x] create-vm-update-nsg-rule-ssh
+    * [x] create-vm
+    * [x] create-vnet
+  * [x] Create github action for test resources
 * [ ] AWS
-
-
-  * [ ] Active Directory
-    * [ ] Install packages
-    * [ ] Configure services
-    * [ ] Create pipeline for test services
-  * [ ] Azure
+  * [x] Create Script for Install and Configure aws cli
+  * [ ] Create scripts for provisioning resources in aws with cli
+  * [ ] Create github action for test resources
 
 ## Contributing
 
