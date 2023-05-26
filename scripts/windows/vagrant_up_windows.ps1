@@ -6,8 +6,8 @@
    Create a semafore for vagrant up
    Copy public key for vagrant shared folder
    This script is used for create a new lab with vagrant.
-   Create all VM's in Vagrantfile  
-   Copy all private key of VM's for F:\Projetos\vagrant_pk folder   
+   Create all VM's in Vagrantfile
+   Copy all private key of VM's for F:\Projetos\vagrant_pk folder
 .EXAMPLE
    & vagrant_up_windows.ps1
 #>
@@ -33,7 +33,7 @@ switch ($(hostname)) {
    "silvestrini" {
       # Variables
       $vagrant="E:\Apps\Vagrant\bin\vagrant.exe"
-      $vagrantHome = "E:\Apps\Vagrant\vagrant.d" 
+      $vagrantHome = "E:\Apps\Vagrant\vagrant.d"
       $vagrantPK="F:\Projetos\vagrant-pk"
       $baseVagrantfile="F:\CERTIFICACAO\labs\vagrant\"
       $virtualboxFolder = "E:\Apps\VirtualBox"
@@ -45,10 +45,10 @@ switch ($(hostname)) {
       # Vagrant home directory for downloadad boxes.
       setx VAGRANT_HOME "$vagrantHome" >$null
    }
-   "silvestrini2" {      
+   "silvestrini2" {
       # Variables
       $vagrant="C:\Cloud\Vagrant\bin\vagrant.exe"
-      $vagrantHome = "C:\Cloud\Vagrant\.vagrant.d" 
+      $vagrantHome = "C:\Cloud\Vagrant\.vagrant.d"
       $vagrantPK="C:\Cloud\Vagrant\vagrant-pk"
       $baseVagrantfile="C:\Users\marcos.silvestrini\OneDrive\Projetos\labs\Vagrant"
       $virtualboxFolder = "C:\Program Files\Oracle\VirtualBox"

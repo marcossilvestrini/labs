@@ -12,10 +12,6 @@ export LANG=C
 
 cd /home/vagrant || exit
 
-# Install packages
-apt-get install -y jq
-apt-get install -y zip
-
 # Install chrome
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub |
     gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg

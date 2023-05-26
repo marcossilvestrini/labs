@@ -40,7 +40,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vbguest.auto_update = false
   config.vbguest.no_remote   = true
   config.vm.box_download_insecure=true
-  config.ssh.password = "vagrant"
 
   # VM ol9_server01 - DNS Bind, Postfix,Samba, NFS, Pure-FTP
   config.vm.define "ol9-server01"  do |ol9_server01|

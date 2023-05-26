@@ -33,6 +33,9 @@ LoginAWS terraform
 #     --query "KeyMaterial" \
 #     --output text > gs-ubuntu-key.pem
 
+# ssh key pair for aws ec2 instances
+echo vagrant | $(su -c "ssh-keygen -o -a 100 -t ed25519 -N '' -f .ssh/id_ed25519 -C "terraform_aws@skynet.com" <<<y >/dev/null 2>&1" -s /bin/bash vagrant)
+
 # Create aws instance ans app for test
 cd "$TERRAFORM_PLAN" || exit
 terraform init
