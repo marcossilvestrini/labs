@@ -23,7 +23,7 @@ FILE_TEST=test/terraform/check-terraform-aws-app.txt
 LINE="------------------------------------------------------"
 
 echo $LINE >$FILE_TEST
-echo "Check AWS HTTP App for This Lab" >>$FILE_TEST
+echo "Check Terraform AWS HTTP App for This Lab" >>$FILE_TEST
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Date: $DATE" >>$FILE_TEST
 echo -e "$LINE\n" >>$FILE_TEST

@@ -29,9 +29,9 @@ jobs:
         uses: fifsky/html-to-pdf-action@master
         with:
           htmlFile: ./index.html
-          outputFile: ./hireme-book.pdf          
+          outputFile: ./labs.pdf          
           pdfOptions: '{"format": "A4", "margin": {"top": "10mm", "left": "10mm", "right": "10mm", "bottom": "10mm"}}'          
-      - run: sudo chmod 777 hireme-book.pdf
+      - run: sudo chmod 777 labs.pdf
       - run: /usr/bin/git config --global user.email "marcos.silvestrini@gmail.com"
       - run: /usr/bin/git config --global user.name "marcossilvestrini"
       - run: /usr/bin/git add .
@@ -41,8 +41,8 @@ jobs:
       - name: Upload artifacts        
         uses: actions/upload-artifact@v3
         with:
-          name: hireme-book
-          path: ./hireme-book.pdf
+          name: labs
+          path: ./labs.pdf
 
       # - name: Download Artefacts
       #   uses: actions/download-artifact@v3
