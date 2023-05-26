@@ -156,6 +156,7 @@ class MarkdownStyle extends HTMLElement {
 customElements.define('markdown-style', MarkdownStyle);</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px;" class="markdown-style">
     <h1><a name="readme-top"></a></h1>
     <p>
+      <a href="https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg" alt="PSScriptAnalyzer"></a> <a href="https://github.com/marcossilvestrini/labs/actions/workflows/release.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg" alt="Release"></a>
       <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-bind-stack.yml/badge.svg" alt="Check bind Stack"></a>
       <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-dhcp-stack.yml/badge.svg" alt="Check dhcp Stack"></a>
       <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-openldap-stack.yml/badge.svg" alt="Check Openldap Stack"></a>
@@ -165,7 +166,8 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
       <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-samba-stack.yml/badge.svg" alt="Check Samba Stack"></a>
       <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-nfs-stack.yml/badge.svg" alt="Check NFS Stack"></a>
       <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-pureftp-stack.yml/badge.svg" alt="Check Pure-FTP Stack"></a>
-      <a href="https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/powershell.yml/badge.svg" alt="PSScriptAnalyzer"></a> <a href="https://github.com/marcossilvestrini/labs/actions/workflows/release.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/release.yml/badge.svg" alt="Release"></a>
+      <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-docker-app.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-docker-app.yml/badge.svg" alt="Check Docker App"></a>
+      <a href="https://github.com/marcossilvestrini/labs/actions/workflows/check-terraform-aws-app.yml"><img src="https://github.com/marcossilvestrini/labs/actions/workflows/check-terraform-aws-app.yml/badge.svg" alt="Check Terraform AWS App"></a>
     </p>
     <p>
       <a href="https://github.com/marcossilvestrini/labs/blob/master/LICENSE"><img src="https://img.shields.io/github/license/marcossilvestrini/labs.svg?style=for-the-badge" alt="MIT License"></a>
@@ -181,7 +183,9 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
     </p><p align="center">
 <strong>Explore the docs »</strong>
     <br>
-    <a href="https://github.com/marcossilvestrini/labs">Main Page</a>
+    <a href="https://marcossilvestrini.github.io/labs/">Main Page</a>
+    -
+    <a href="https://github.com/marcossilvestrini/labs">Code Page</a>
     -
     <a href="https://github.com/marcossilvestrini/labs/issues">Report Bug</a>
     -
@@ -241,17 +245,10 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
     <p><a name="roadmap"></a></p>
     <h2 id="roadmap"><a class="anchor" aria-hidden="true" tabindex="-1" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
     <ul class="contains-task-list">
-      <li class="task-list-item">
-        <p><input type="checkbox" checked disabled> Create repository</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" checked disabled> Update main README.mf</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" checked disabled> Fix all github errors(PAT,Tokens,actions.etc)</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" checked disabled> Linux</p>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Create repository</li>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Update main README.mf</li>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Fix all github errors(PAT,Tokens,actions.etc)</li>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Linux
         <ul class="contains-task-list">
           <li class="task-list-item"><input type="checkbox" checked disabled> Add bind stack
             <ul class="contains-task-list">
@@ -319,29 +316,73 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
           </li>
         </ul>
       </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" disabled> Docker</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" disabled> Kubernetes</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" disabled> Terraform</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" disabled> Azure</p>
-      </li>
-      <li class="task-list-item">
-        <p><input type="checkbox" disabled> AWS</p>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Docker
         <ul class="contains-task-list">
-          <li class="task-list-item"><input type="checkbox" disabled> Active Directory
+          <li class="task-list-item"><input type="checkbox" checked disabled> Install and Configure Docker
             <ul class="contains-task-list">
-              <li class="task-list-item"><input type="checkbox" disabled> Install packages</li>
-              <li class="task-list-item"><input type="checkbox" disabled> Configure services</li>
-              <li class="task-list-item"><input type="checkbox" disabled> Create pipeline for test services</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create script for install and configure docker</li>
             </ul>
           </li>
-          <li class="task-list-item"><input type="checkbox" disabled> Azure</li>
+          <li class="task-list-item"><input type="checkbox" checked disabled> Generate Custom Docker App Image
+            <ul class="contains-task-list">
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create dockerfile</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> Build Image</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> Push image to docker hub</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create container for test image</li>
+            </ul>
+          </li>
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create pipeline for send test in slack channel</li>
+        </ul>
+      </li>
+      <li class="task-list-item"><input type="checkbox" disabled> Kubernetes</li>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Terraform
+        <ul class="contains-task-list">
+          <li class="task-list-item"><input type="checkbox" checked disabled> Install and Configure Terraform
+            <ul class="contains-task-list">
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create script for install and configure terraform</li>
+            </ul>
+          </li>
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create resource in AWS Provider
+            <ul class="contains-task-list">
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create aws ec2 instance in AWS</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create HTTP App in ec2 instance</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> Create test for HTTP App</li>
+            </ul>
+          </li>
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create pipeline for send test in slack channel</li>
+        </ul>
+      </li>
+      <li class="task-list-item"><input type="checkbox" checked disabled> Azure
+        <ul class="contains-task-list">
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create Script for Install and Configure Azure cli</li>
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create scripts for provisioning resources in Azure with cli
+            <ul class="contains-task-list">
+              <li class="task-list-item"><input type="checkbox" checked disabled> azure-functions</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-app-function</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-app-service</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-container-app</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-cosmosdb-database</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-group-user-aad</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-kubernetes-app</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-sql-single-database</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-storage-account</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-storage-blob-container</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-storage-file-share</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-vm-add-disk</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-vm-add-nsg-rule-http</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-vm-update-nsg-rule-ssh</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-vm</li>
+              <li class="task-list-item"><input type="checkbox" checked disabled> create-vnet</li>
+            </ul>
+          </li>
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create github action for test resources</li>
+        </ul>
+      </li>
+      <li class="task-list-item"><input type="checkbox" disabled> AWS
+        <ul class="contains-task-list">
+          <li class="task-list-item"><input type="checkbox" checked disabled> Create Script for Install and Configure aws cli</li>
+          <li class="task-list-item"><input type="checkbox" disabled> Create scripts for provisioning resources in aws with cli</li>
+          <li class="task-list-item"><input type="checkbox" disabled> Create github action for test resources</li>
         </ul>
       </li>
     </ul>
