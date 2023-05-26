@@ -4,5 +4,5 @@ $html = (($web.tostring() -split "[`r`n]" | select-string "vagrant_") -split ":"
 $html -match '\d\.\d\.\d' > $null
 $version = $Matches.0
 $download = "$url/$version/vagrant_$($version)_windows_amd64.msi"
-#Invoke-WebRequest -Uri $download -OutFile "$HOME\Downloads"
+Invoke-WebRequest -Uri $download -OutFile "$HOME\Downloads"
 

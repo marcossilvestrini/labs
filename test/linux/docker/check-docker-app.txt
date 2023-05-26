@@ -1,0 +1,22 @@
+------------------------------------------------------
+Check Docker App for This Lab
+Date: 2023-05-25 22:43:22
+------------------------------------------------------
+
+------------------------------------------------------
+Check Docker Build Image app-http...
+mrsilvestrini/app-http   v1.0.0    b643398abcfd   13 seconds ago   143MB
+------------------------------------------------------
+
+------------------------------------------------------
+Check Status Docker Container app-http...
+ad03ebbcca85   mrsilvestrini/app-http:v1.0.0   "/docker-entrypoint.…"   Less than a second ago   Up Less than a second   0.0.0.0:8080->80/tcp, :::8080->80/tcp   app-http
+------------------------------------------------------
+
+Check Docker App Status...
+
+Site: http://debian-client01:8080...
+
+200
+------------------------------------------------------
+

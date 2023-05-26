@@ -106,7 +106,7 @@ Use this repository for get learning about LPIC2 202-450 exam
 * [x] Create repository
 * [x] Update main README.mf
 * [x] Fix all github errors(PAT,Tokens,actions.etc)
-* [ ] Add linux stack
+* [x] Linux
   * [x] Add bind stack
     * [x] Up servers
     * [x] Install packages
@@ -147,7 +147,13 @@ Use this repository for get learning about LPIC2 202-450 exam
     * [x] Install packages
     * [x] Configure services
     * [x] Create pipeline for test services  
-* [ ] Add windows stack
+* [ ] Docker
+* [ ] Kubernetes
+* [ ] Terraform
+* [ ] Azure
+* [ ] AWS
+
+
   * [ ] Active Directory
     * [ ] Install packages
     * [ ] Configure services

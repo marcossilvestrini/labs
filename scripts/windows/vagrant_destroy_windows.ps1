@@ -50,6 +50,12 @@ $postfix = "$baseVagrantfile\linux\postfix"
 $samba = "$baseVagrantfile\linux\samba"
 $nfs = "$baseVagrantfile\linux\nfs"
 $pureftp="$baseVagrantfile\linux\pure-ftp"
+$lab="$baseVagrantfile\linux\lab"
+$azure="$baseVagrantfile\linux\azure"
+$aws="$baseVagrantfile\linux\aws"
+$docker="$baseVagrantfile\linux\docker"
+$terraform="$baseVagrantfile\linux\terraform"
+
 
 # Folder vagrant virtualbox machines artefacts
 $vmFolders = @(    
@@ -71,7 +77,6 @@ Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destr
 #Destroy nginx stack
 Set-Location $nginx
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
-
 
 #Destroy dhcp
 Set-Location $dhcp
@@ -95,6 +100,26 @@ Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destr
 
 #Destroy pureftp stack
 Set-Location $pureftp
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy lab stack
+Set-Location $lab
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy azure stack
+Set-Location $azure
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy aws stack
+Set-Location $aws
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy docker stack
+Set-Location $docker
+Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
+
+#Destroy terraform stack
+Set-Location $terraform
 Start-Process -Wait -WindowStyle Hidden  -FilePath $vagrant -ArgumentList "destroy -f"  -Verb RunAs
 
 # Delete folder virtualbox machines artefacts
