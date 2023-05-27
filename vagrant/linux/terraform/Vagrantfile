@@ -119,6 +119,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Install client tools
     debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-client.sh"
+
+    # Labs docker
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/docker/userdata-docker.sh"
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/docker/check-docker-app.sh"
+
+    # AWS Labs
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/aws/userdata-aws.sh"
+
+    # Terraform labs
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/userdata-terraform.sh"
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/create-terrafom-aws-app.sh"
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/check-terraform-aws-app.sh"
+    #debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/destroy-terrafom-aws-app.sh"
     
   end
 
