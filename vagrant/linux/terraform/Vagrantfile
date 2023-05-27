@@ -56,7 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ol9_server01.vm.network "public_network",nic_type: "virtio",ip: "192.168.0.130",mode: "bridge",bridge: [
       "Intel(R) I211 Gigabit Network Connection"
     ]
-    ol9_server01.vm.network "private_network",ip: "172.36.12.230",nic_type: "virtio"
+    #ol9_server01.vm.network "private_network",ip: "172.36.12.230",nic_type: "virtio"
 
     # MOUNTS
     ol9_server01.vm.synced_folder ".", "/vagrant", disabled: true
@@ -65,8 +65,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ol9_server01.vm.synced_folder "../../../scripts/linux/", "/home/vagrant/scripts"
 
     # PROVIDER
-    ol9_server01.vm.provider "virtualbox" do |vb|
-      vb.check_guest_additions = false
+    ol9_server01.vm.provider "virtualbox" do |vb|      
       vb.linked_clone = true
       vb.name =VM_OL9_SERVER01
       vb.memory = 8192
@@ -98,7 +97,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     debian_client01.vm.network "public_network",ip: "192.168.0.150",mode: "bridge",bridge: [
       "Intel(R) I211 Gigabit Network Connection"
     ]
-    debian_client01.vm.network "private_network",ip: "172.36.12.231",mac: "080027f3066c"
+    #debian_client01.vm.network "private_network",ip: "172.36.12.231",mac: "080027f3066c"
 
     # MOUNTS
     debian_client01.vm.synced_folder ".", "/vagrant", disabled: true
@@ -108,8 +107,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     debian_client01.vm.synced_folder "../../../test/linux/", "/home/vagrant/test"
 
     #PROVIDER
-    debian_client01.vm.provider "virtualbox" do |vb|
-      vb.check_guest_additions = false
+    debian_client01.vm.provider "virtualbox" do |vb|      
       vb.linked_clone = true
       vb.name =VM_DEBIAN_CLIENT01
       vb.memory = 8192
@@ -120,7 +118,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
     # Install client tools
-    #debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-client.sh"
+    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-client.sh"
     
   end
 

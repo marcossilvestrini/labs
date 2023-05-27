@@ -44,17 +44,17 @@ apt-get install -y gnupg gnupg2
 apt-get install -y ca-certificates
 
 
-# # Install Powershell 7
-#apt-get install -y apt-transport-https
+# Install Powershell 7
+apt-get install -y apt-transport-https
 
-# ## Import the public repository GPG keys
-# curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+## Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 
-# ## Register the Microsoft Product feed
-# sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
+## Register the Microsoft Product feed
+sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
 
-# ## Install PowerShell
-# apt update -y && apt install -y powershell
+## Install PowerShell
+apt update -y && apt install -y powershell
 
 
 # Set profile in /etc/profile
@@ -84,16 +84,16 @@ cp configs/commons/sysctl.conf /etc
 dos2unix /etc/sysctl.conf
 systemctl daemon-reload
 
-# Set ssh
-cp -f configs/commons/01-sshd-custom.conf /etc/ssh/sshd_config.d
-dos2unix /etc/ssh/sshd_config.d/01-sshd-custom.conf
-systemctl restart sshd
-cat security/id_ecdsa.pub >>.ssh/authorized_keys
-echo vagrant | $(su -c "ssh-keygen -q -t ecdsa -b 521 -N '' -f .ssh/id_ecdsa <<<y >/dev/null 2>&1" -s /bin/bash vagrant)
+# # Set ssh
+# cp -f configs/commons/01-sshd-custom.conf /etc/ssh/sshd_config.d
+# dos2unix /etc/ssh/sshd_config.d/01-sshd-custom.conf
+# systemctl restart sshd
+# cat security/id_ecdsa.pub >>.ssh/authorized_keys
+# echo vagrant | $(su -c "ssh-keygen -q -t ecdsa -b 521 -N '' -f .ssh/id_ecdsa <<<y >/dev/null 2>&1" -s /bin/bash vagrant)
 
-# Set GnuGP
-echo vagrant | $(su -c "gpg --batch --gen-key configs/commons/gen-key-script" -s /bin/bash vagrant)
-echo vagrant | $(su -c "gpg --export --armor vagrant > .gnupg/vagrant.pub.key" -s /bin/bash vagrant)
+# # Set GnuGP
+# echo vagrant | $(su -c "gpg --batch --gen-key configs/commons/gen-key-script" -s /bin/bash vagrant)
+# echo vagrant | $(su -c "gpg --export --armor vagrant > .gnupg/vagrant.pub.key" -s /bin/bash vagrant)
 
 # Set X11 Server
 Xorg -configure
