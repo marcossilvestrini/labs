@@ -73,13 +73,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    ol9_server01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-ol9.sh"
+    ol9_server01.vm.provision "shell", name: "[USERDATA-OL9.SH]", path: "../../../scripts/linux/commons/userdata-ol9.sh"
 
     # SET DNS BIND
-    ol9_server01.vm.provision "shell", path: "../../../scripts/linux/bind/userdata-bind-master.sh"
+    ol9_server01.vm.provision "shell", name: "[USERDATA-BIND-MASTER.SH]", path: "../../../scripts/linux/bind/userdata-bind-master.sh"
 
     # CONFIGURE PURE-FTP
-    ol9_server01.vm.provision "shell", path: "../../../scripts/linux/pure-ftp/userdata-pureftp.sh"
+    ol9_server01.vm.provision "shell",  name: "[USERDATA-PUREFTP.SH]", path: "../../../scripts/linux/pure-ftp/userdata-pureftp.sh"
 
   end
 
@@ -115,23 +115,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # SSH,FIREWALLD,SELINUX, UPDATES AND PROFILE
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-debian.sh"
+    debian_client01.vm.provision "shell", name: "[USERDATA-DEBIAN.SH]", path: "../../../scripts/linux/commons/userdata-debian.sh"
 
     # Install client tools
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/commons/userdata-client.sh"
+    debian_client01.vm.provision "shell", name: "[USERDATA-CLIENT.SH]", path: "../../../scripts/linux/commons/userdata-client.sh"
 
     # Labs docker
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/docker/userdata-docker.sh"
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/docker/check-docker-app.sh"
+    debian_client01.vm.provision "shell", name: "[USERDATA-DOCKER.SH]", path: "../../../scripts/linux/docker/userdata-docker.sh"
+    debian_client01.vm.provision "shell", name: "[CHECK-DOCKER-APP.SH]", path: "../../../scripts/linux/docker/check-docker-app.sh"
 
     # AWS Labs
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/aws/userdata-aws.sh"
+    debian_client01.vm.provision "shell", name: "[USERDATA-AWS.SH]",  path: "../../../scripts/linux/aws/userdata-aws.sh"
 
     # Terraform labs
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/userdata-terraform.sh"
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/create-terrafom-aws-app.sh"
-    debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/check-terraform-aws-app.sh"
-    #debian_client01.vm.provision "shell", path: "../../../scripts/linux/terraform/destroy-terrafom-aws-app.sh"
+    debian_client01.vm.provision "shell", name: "[USERDATA-TERRAFORM.SH]", path: "../../../scripts/linux/terraform/userdata-terraform.sh"
+    debian_client01.vm.provision "shell", name: "[CREATE-TERRAFOM-AWS-APP.SH]", path: "../../../scripts/linux/terraform/create-terrafom-aws-app.sh"
+    debian_client01.vm.provision "shell", name: "[CHECK-TERRAFORM-AWS-APP.SH]", path: "../../../scripts/linux/terraform/check-terraform-aws-app.sh"
+    debian_client01.vm.provision "shell", name: "[DESTROY-TERRAFOM-AWS-APP.SH]", path: "../../../scripts/linux/terraform/destroy-terrafom-aws-app.sh"
     
   end
 

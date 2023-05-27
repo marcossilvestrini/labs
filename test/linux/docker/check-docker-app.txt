@@ -1,16 +1,16 @@
 ------------------------------------------------------
 Check Docker App for This Lab
-Date: 2023-05-27 20:00:28
+Date: 2023-05-27 20:35:49
 ------------------------------------------------------
 
 ------------------------------------------------------
 Check Docker Build Image app-http...
-mrsilvestrini/app-http   v1.0.0    45c0aa82c6ab   9 minutes ago   143MB
+mrsilvestrini/app-http   v1.0.0    dd8169149125   4 minutes ago   143MB
 ------------------------------------------------------
 
 ------------------------------------------------------
 Check Status Docker Container app-http...
-a8bbb4b52e90   mrsilvestrini/app-http:v1.0.0   "/docker-entrypoint.…"   1 second ago   Up Less than a second   0.0.0.0:8080->80/tcp, :::8080->80/tcp   app-http
+571f9d52e526   mrsilvestrini/app-http:v1.0.0   "/docker-entrypoint.…"   1 second ago   Up Less than a second   0.0.0.0:8080->80/tcp, :::8080->80/tcp   app-http
 ------------------------------------------------------
 
 Check Docker App Status...
