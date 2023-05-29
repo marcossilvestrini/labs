@@ -1,3 +1,11 @@
+# Execute script as Administrator
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))  
+{  
+  $arguments = "& '" +$myinvocation.mycommand.definition + "'"
+  Start-Process -Wait powershell -Verb runAs -WindowStyle Hidden -ArgumentList $arguments
+  Break
+}
+
 $project = "F:\CERTIFICACAO\lpic-2-202-450"
 Set-Location $project
 Get-Process -Name *git* | Stop-Process -Force

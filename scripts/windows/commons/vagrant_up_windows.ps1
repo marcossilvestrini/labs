@@ -12,6 +12,14 @@
    & vagrant_up_windows.ps1
 #>
 
+# Execute script as Administrator
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator"))  
+{  
+  $arguments = "& '" +$myinvocation.mycommand.definition + "'"
+  Start-Process -Wait powershell -Verb runAs -WindowStyle Hidden -ArgumentList $arguments
+  Break
+}
+
 # Clear screen
 Clear-Host
 
@@ -29,8 +37,10 @@ New-Item -ItemType File -Path $semafore -Force >$null
 $ssh_path="$( (($scriptPath | Split-Path -Parent)| Split-Path -Parent) | Split-Path -Parent)\security"
 Copy-Item -Force "$env:USERPROFILE\.ssh\id_ecdsa.pub" -Destination $ssh_path
 
-switch ($(hostname)) {
+switch ($(hostname)) {   
    "silvestrini" {
+      # Desktop Configurations
+      Write-Host "Project execution in PC"
       # Variables
       $vagrant="E:\Apps\Vagrant\bin\vagrant.exe"
       $vagrantHome = "E:\Apps\Vagrant\vagrant.d"
@@ -38,30 +48,30 @@ switch ($(hostname)) {
       $baseVagrantfile="F:\CERTIFICACAO\labs\vagrant\"
       $virtualboxFolder = "E:\Apps\VirtualBox"
       $virtualboxVMFolder = "E:\Servers\VirtualBox"
-
-      # VirtualBox home directory.
-      Start-Process -Wait -NoNewWindow -FilePath "$virtualboxFolder\VBoxManage.exe" `
-      -ArgumentList  @("setproperty", "machinefolder", "$virtualboxVMFolder")
-      # Vagrant home directory for downloadad boxes.
-      setx VAGRANT_HOME "$vagrantHome" >$null
-   }
+   }   
    "silvestrini2" {
+      # Notebook Configurations
+      Write-Host "Project execution in Notebook"
       # Variables
       $vagrant="C:\Cloud\Vagrant\bin\vagrant.exe"
       $vagrantHome = "C:\Cloud\Vagrant\.vagrant.d"
       $vagrantPK="C:\Cloud\Vagrant\vagrant-pk"
-      $baseVagrantfile="C:\Users\marcos.silvestrini\OneDrive\Projetos\labs\Vagrant"
+      # Write-Host "Create folder: $vagrantPK"
+      # if(!(Test-Path $vagrantPK)){New-Item -ItemType Directory $vagrantPK}
+      $vagrantPK="F:\Projetos\vagrant-pk"
+      $baseVagrantfile="F:\CERTIFICACAO\labs\vagrant"
       $virtualboxFolder = "C:\Program Files\Oracle\VirtualBox"
       $virtualboxVMFolder = "C:\Cloud\VirtualBox"
-
-      # VirtualBox home directory.
-      Start-Process -Wait -NoNewWindow -FilePath "$virtualboxFolder\VBoxManage.exe" `
-      -ArgumentList  @("setproperty", "machinefolder", "$virtualboxVMFolder")
-      # Vagrant home directory for downloadad boxes.
-      setx VAGRANT_HOME "$vagrantHome" >$null
    }
    Default {Write-Host "This hostname is not available for execution this script!!!";exit 1}
 }
+
+# # VirtualBox home directory.
+# Start-Process -Wait -NoNewWindow -FilePath "$virtualboxFolder\VBoxManage.exe" `
+# -ArgumentList  @("setproperty", "machinefolder", "$virtualboxVMFolder")
+
+# # Vagrant home directory for downloadad boxes.
+# setx VAGRANT_HOME "$vagrantHome" >$null
 
 #Up Servers BIND
 # $bind = "$baseVagrantfile\linux\dnsbind"
