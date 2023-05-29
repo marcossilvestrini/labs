@@ -33,7 +33,8 @@ switch ($(hostname)) {
     "silvestrini2" {      
         # Variables
         $vagrant = "C:\Cloud\Vagrant\bin\vagrant.exe"       
-        $baseVagrantfile = "C:\Users\marcos.silvestrini\OneDrive\Projetos\labs\vagrant"
+        #$baseVagrantfile = "C:\Users\marcos.silvestrini\OneDrive\Projetos\labs\vagrant"
+        $baseVagrantfile="F:\CERTIFICACAO\labs\vagrant\"
         $vagrantHome = "C:\Cloud\Vagrant\.vagrant.d"      
         $virtualboxFolder = "C:\Program Files\Oracle\VirtualBox"
         $virtualboxVMFolder = "C:\Cloud\VirtualBox"
