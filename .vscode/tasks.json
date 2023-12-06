@@ -50,24 +50,7 @@
       },
       "runOptions": {
         "runOn": "folderOpen"
-      }
-    // },
-    // {
-    //   "label": "Unblock Powershell Scripts",
-    //   "type": "shell",
-    //   "command": "(Get-ChildItem -Recurse  F:\\CERTIFICACAO\\labs -Filter *.ps1).FullName | %{Unblock-File $_}",
-    //   "windows": {
-    //     "command": [
-    //       "(Get-ChildItem -Recurse  F:\\CERTIFICACAO\\labs -Filter *.ps1).FullName | %{Unblock-File $_}"          
-    //     ]
-    //   },
-    //   "presentation": {
-    //     "reveal": "always",
-    //     "panel": "new"
-    //   },
-    //   "runOptions": {
-    //     "runOn": "folderOpen"
-    //   }
+      }    
     }
   ]
 }
